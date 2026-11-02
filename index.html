@@ -52,7 +52,7 @@
     <!-- Header and Navigation -->
     <header class="site-header" id="header">
         <div class="wrap header-inner">
-            <a class="brand-link" href="#home" aria-label="Adhitra Home">
+            <a class="brand-link" href="./" aria-label="Adhitra Home">
                 <img src="assets/brand/logo_full.svg" alt="Adhitra" class="header-logo" width="160" height="38">
             </a>
 
@@ -77,65 +77,301 @@
     </header>
 
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero wrap" id="home">
-            <div class="hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow">INDEPENDENT TECHNOLOGY VENTURE</p>
-                    <h1>Engineered<br>for <em>What’s Next.</em></h1>
-                    <p class="hero-lead">Building thoughtful technology across software, hardware and connected
-                        experiences.</p>
-                    <p class="hero-intro">We turn ambitious ideas into useful, dependable technology through disciplined
-                        engineering, practical innovation, and human-centered design.</p>
-                    <div class="hero-actions">
-                        <a class="btn-primary" href="#focus">Explore Our Work ↘</a>
-                        <a class="btn-secondary" href="#about">Discover Adhitra →</a>
-                    </div>
-                </div>
+        <!-- Hero Brand Carousel Section -->
+        <section class="hero-carousel-section wrap hero-entering" id="home" role="region" aria-roledescription="carousel"
+            aria-label="Adhitra Technology Focus Carousel">
+            <div class="carousel-container" id="hero-carousel">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Slide 01: Software & Digital Platforms -->
+                    <article class="carousel-slide active" role="group" aria-roledescription="slide"
+                        aria-label="1 of 3: Software & Digital Platforms" data-slide="0">
+                        <div class="slide-grid">
+                            <div class="slide-copy">
+                                <p class="eyebrow">01 // SOFTWARE &amp; DIGITAL PLATFORMS</p>
+                                <h1>Technology That<br>Moves <em>Ideas Forward.</em></h1>
+                                <p class="hero-lead">We build thoughtful digital platforms, intelligent tools, and
+                                    practical software experiences that help turn ideas into meaningful solutions.</p>
+                                <div class="hero-actions">
+                                    <a class="btn-primary" href="#focus">Explore Our Work ↘</a>
+                                    <a class="btn-secondary" href="#about">Discover Adhitra →</a>
+                                </div>
+                            </div>
 
-                <div class="hero-visual" aria-hidden="true">
-                    <div class="schematic-box">
-                        <span class="schematic-coord">SYS // 01.ENG</span>
-                        <div class="tech-ring ring-outer"></div>
-                        <div class="tech-ring ring-mid"></div>
-                        <div class="tech-ring ring-inner"></div>
+                            <div class="slide-visual" aria-hidden="true">
+                                <div class="software-workstation">
+                                    <div class="workstation-chrome">
+                                        <div class="chrome-dots">
+                                            <span></span><span></span><span></span>
+                                        </div>
+                                        <div class="chrome-tab">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <polyline points="16 18 22 12 16 6"></polyline>
+                                                <polyline points="8 6 2 12 8 18"></polyline>
+                                            </svg>
+                                            <span>adhitra.platform / core-runtime</span>
+                                        </div>
+                                        <span class="chrome-status">SYNC: ACTIVE</span>
+                                    </div>
 
-                        <div class="schematic-core" title="Adhitra Technology">
-                            <img src="assets/brand/logo_symbol.svg" alt="" class="schematic-symbol" width="64"
-                                height="42">
-                        </div>
+                                    <div class="workstation-body">
+                                        <div class="code-pane">
+                                            <div class="line-numbers">
+                                                <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span>
+                                            </div>
+                                            <div class="code-content">
+                                                <p><span class="c-kw">service</span> <span class="c-fn">AdhitraCore</span> {</p>
+                                                <p class="indent-1"><span class="c-kw">const</span> <span class="c-var">pipeline</span> = <span class="c-fn">initStream</span>();</p>
+                                                <p class="indent-1"><span class="c-kw">await</span> <span class="c-var">pipeline</span>.<span class="c-fn">dispatch</span>({</p>
+                                                <p class="indent-2">mode: <span class="c-str">"connected"</span>,</p>
+                                                <p class="indent-2">latency: <span class="c-num">&lt;4.2ms</span></p>
+                                                <p class="indent-1">});</p>
+                                                <p class="indent-1"><span class="c-ret">return</span> <span class="c-var">pipeline</span>.<span class="c-fn">state</span>();</p>
+                                                <p>}</p>
+                                            </div>
+                                        </div>
 
-                        <div class="tech-pill pill-1">
-                            <span class="dot"></span>
-                            <span>SOFTWARE PLATFORMS</span>
+                                        <div class="telemetry-pane">
+                                            <div class="telemetry-card">
+                                                <div class="telemetry-header">
+                                                    <span class="t-label">THROUGHPUT</span>
+                                                    <span class="t-val">99.98%</span>
+                                                </div>
+                                                <div class="sparkline">
+                                                    <svg viewBox="0 0 120 28" fill="none" class="spark-svg">
+                                                        <path d="M0 20 L20 18 L40 10 L60 14 L80 6 L100 8 L120 2"
+                                                            stroke="#00E5D4" stroke-width="2" stroke-linecap="round" />
+                                                        <path d="M0 20 L20 18 L40 10 L60 14 L80 6 L100 8 L120 2 L120 28 L0 28 Z"
+                                                            fill="url(#sparkGrad)" opacity="0.25" />
+                                                        <defs>
+                                                            <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
+                                                                <stop offset="0%" stop-color="#00E5D4" />
+                                                                <stop offset="100%" stop-color="#00E5D4" stop-opacity="0" />
+                                                            </linearGradient>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                            </div>
+
+                                            <div class="telemetry-card">
+                                                <div class="telemetry-header">
+                                                    <span class="t-label">MODULE STATUS</span>
+                                                    <span class="t-badge">OPTIMAL</span>
+                                                </div>
+                                                <div class="module-chips">
+                                                    <span class="m-chip active">API ROUTER</span>
+                                                    <span class="m-chip active">SECURE BUS</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="workstation-foot">
+                                        <span>STATUS: BUILT WITH INTENT</span>
+                                        <span>ZERO DEPENDENCY ARCHITECTURE</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tech-pill pill-2">
-                            <span class="dot"></span>
-                            <span>CONNECTED SYSTEMS</span>
+                    </article>
+
+                    <!-- Slide 02: Hardware & Devices -->
+                    <article class="carousel-slide" role="group" aria-roledescription="slide"
+                        aria-label="2 of 3: Hardware & Devices" data-slide="1" aria-hidden="true">
+                        <div class="slide-grid">
+                            <div class="slide-copy">
+                                <p class="eyebrow">02 // HARDWARE &amp; DEVICES</p>
+                                <h1>Engineering Beyond<br><em>the Screen.</em></h1>
+                                <p class="hero-lead">We explore purpose-built devices, electronics, and physical
+                                    technology solutions designed to solve practical problems.</p>
+                                <div class="hero-actions">
+                                    <a class="btn-primary" href="#focus">Explore Our Work ↘</a>
+                                    <a class="btn-secondary" href="#about">Discover Adhitra →</a>
+                                </div>
+                            </div>
+
+                            <div class="slide-visual" aria-hidden="true">
+                                <div class="hardware-chassis">
+                                    <div class="chassis-header">
+                                        <div class="chassis-spec">
+                                            <span class="crosshair">+</span>
+                                            <span>SPEC // 148.0mm × 92.5mm</span>
+                                        </div>
+                                        <span class="chassis-id">REV // B.2026</span>
+                                    </div>
+
+                                    <div class="pcb-surface">
+                                        <div class="copper-grid"></div>
+
+                                        <!-- Main Microcontroller / Silicon SoC -->
+                                        <div class="soc-package">
+                                            <div class="soc-die">
+                                                <span class="soc-label">ADHITRA</span>
+                                                <span class="soc-sub">SOC · D-40</span>
+                                                <span class="soc-dot"></span>
+                                            </div>
+                                            <div class="soc-pins pin-top"></div>
+                                            <div class="soc-pins pin-bottom"></div>
+                                            <div class="soc-pins pin-left"></div>
+                                            <div class="soc-pins pin-right"></div>
+                                        </div>
+
+                                        <!-- Auxiliary Components -->
+                                        <div class="pcb-component comp-osc">
+                                            <span>32.0 MHz</span>
+                                        </div>
+                                        <div class="pcb-component comp-reg">
+                                            <span>3V3 LDO</span>
+                                        </div>
+                                        <div class="heatsink-fins">
+                                            <span></span><span></span><span></span><span></span>
+                                        </div>
+
+                                        <!-- Test points and bus lines -->
+                                        <div class="pcb-trace trace-1"></div>
+                                        <div class="pcb-trace trace-2"></div>
+                                        <div class="test-points">
+                                            <div class="tp"><span>TP1</span></div>
+                                            <div class="tp"><span>TP2</span></div>
+                                            <div class="tp"><span>TP3</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="chassis-footer">
+                                        <span>SURFACE MOUNT ASSEMBLY</span>
+                                        <span>PHYSICAL ENGINEERING DEPT</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tech-pill pill-3">
-                            <span class="dot"></span>
-                            <span>PURPOSE-BUILT DEVICES</span>
+                    </article>
+
+                    <!-- Slide 03: Connected Experiences -->
+                    <article class="carousel-slide" role="group" aria-roledescription="slide"
+                        aria-label="3 of 3: Connected Experiences" data-slide="2" aria-hidden="true">
+                        <div class="slide-grid">
+                            <div class="slide-copy">
+                                <p class="eyebrow">03 // CONNECTED EXPERIENCES</p>
+                                <h1>Bringing Technology<br><em>Together.</em></h1>
+                                <p class="hero-lead">We connect software, devices, and systems to create useful,
+                                    integrated experiences across the physical and digital world.</p>
+                                <div class="hero-actions">
+                                    <a class="btn-primary" href="#focus">Explore Our Work ↘</a>
+                                    <a class="btn-secondary" href="#about">Discover Adhitra →</a>
+                                </div>
+                            </div>
+
+                            <div class="slide-visual" aria-hidden="true">
+                                <div class="ecosystem-stage">
+                                    <!-- Device Node (Physical) -->
+                                    <div class="node-box physical-node">
+                                        <div class="node-badge">PHYSICAL DEVICE</div>
+                                        <div class="device-mini-chassis">
+                                            <div class="sensor-indicator">
+                                                <span class="pulse-ring"></span>
+                                                <span class="sensor-dot"></span>
+                                            </div>
+                                            <div class="device-readout">
+                                                <span>NODE: EDG-01</span>
+                                                <small>TELEMETRY LINK</small>
+                                            </div>
+                                        </div>
+                                        <div class="port-bar">
+                                            <span>UART</span><span>I2C</span><span>SPI</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bridging Connection Stream -->
+                                    <div class="bridge-stream">
+                                        <div class="stream-line">
+                                            <span class="data-packet p1"></span>
+                                            <span class="data-packet p2"></span>
+                                            <span class="data-packet p3"></span>
+                                        </div>
+                                        <span class="stream-label">SYNC · TLS 1.3</span>
+                                    </div>
+
+                                    <!-- Digital Platform Node (Software) -->
+                                    <div class="node-box digital-node">
+                                        <div class="node-badge">DIGITAL CONSOLE</div>
+                                        <div class="console-screen">
+                                            <div class="console-row">
+                                                <span class="c-key">STATE:</span>
+                                                <span class="c-val connected">CONNECTED</span>
+                                            </div>
+                                            <div class="console-row">
+                                                <span class="c-key">LATENCY:</span>
+                                                <span class="c-val">3.8 ms</span>
+                                            </div>
+                                            <div class="console-row">
+                                                <span class="c-key">BUFFER:</span>
+                                                <span class="c-val">CLEARED</span>
+                                            </div>
+                                        </div>
+                                        <div class="switch-bar">
+                                            <span class="switch-pill on">AUTO-SYNC</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
 
-            <div class="hero-footer">
-                <span>01 / BUILT WITH INTENT</span>
-                <span>SOFTWARE · HARDWARE · CONNECTED EXPERIENCES</span>
+            <!-- Carousel Navigation & Indicators Footer -->
+            <div class="carousel-nav-bar">
+                <!-- Pagination Indicators -->
+                <div class="carousel-indicators" role="tablist" aria-label="Hero slide selection">
+                    <button class="indicator-tab active" role="tab" aria-selected="true" data-slide-index="0"
+                        aria-label="Slide 1: Software & Digital Platforms">
+                        <span class="tab-index">01</span>
+                        <span class="tab-title">Software</span>
+                        <span class="tab-meter"><span class="tab-progress"></span></span>
+                    </button>
+                    <button class="indicator-tab" role="tab" aria-selected="false" data-slide-index="1"
+                        aria-label="Slide 2: Hardware & Devices">
+                        <span class="tab-index">02</span>
+                        <span class="tab-title">Hardware</span>
+                        <span class="tab-meter"><span class="tab-progress"></span></span>
+                    </button>
+                    <button class="indicator-tab" role="tab" aria-selected="false" data-slide-index="2"
+                        aria-label="Slide 3: Connected Experiences">
+                        <span class="tab-index">03</span>
+                        <span class="tab-title">Connected</span>
+                        <span class="tab-meter"><span class="tab-progress"></span></span>
+                    </button>
+                </div>
+
+                <!-- Previous / Next Controls -->
+                <div class="carousel-arrows" aria-label="Slide navigation arrows">
+                    <button class="arrow-btn" id="hero-prev" aria-label="Previous slide" title="Previous slide">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </button>
+                    <button class="arrow-btn" id="hero-next" aria-label="Next slide" title="Next slide">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </section>
 
         <!-- About Adhitra Section -->
         <section class="section wrap" id="about">
             <div class="about-layout">
-                <div class="about-header">
+                <div class="about-header reveal-on-scroll">
                     <p class="kicker">01 — ABOUT ADHITRA</p>
                     <h2>Technology should do more than work.<br><em>It should move things forward.</em></h2>
                 </div>
 
-                <div class="about-content">
+                <div class="about-content reveal-on-scroll stagger-1">
                     <p class="lead-p">Adhitra is a technology venture focused on creating useful, well-engineered
                         technology through thoughtful design, practical innovation and reliable engineering.</p>
                     <p>We look beyond short-lived hype cycles to build solutions with purpose. Whether shaping intuitive
@@ -145,17 +381,17 @@
                         incubate purposeful initiatives from first principles to tangible execution.</p>
 
                     <div class="principles-grid">
-                        <div class="principle-item">
+                        <div class="principle-item reveal-on-scroll stagger-1">
                             <span class="principle-num">01 / DISCIPLINE</span>
                             <h3>Thoughtful Design</h3>
                             <p>Understanding real problems before writing a line of code or designing a board.</p>
                         </div>
-                        <div class="principle-item">
+                        <div class="principle-item reveal-on-scroll stagger-2">
                             <span class="principle-num">02 / UTILITY</span>
                             <h3>Practical Innovation</h3>
                             <p>Developing solutions that eliminate friction rather than chasing novelty.</p>
                         </div>
-                        <div class="principle-item">
+                        <div class="principle-item reveal-on-scroll stagger-3">
                             <span class="principle-num">03 / INTEGRITY</span>
                             <h3>Reliable Engineering</h3>
                             <p>Systems engineered for stability, longevity, and dependable performance.</p>
@@ -167,7 +403,7 @@
 
         <!-- Focus Areas Section -->
         <section class="section wrap" id="focus">
-            <div class="focus-header">
+            <div class="focus-header reveal-on-scroll">
                 <div class="focus-header-copy">
                     <p class="kicker">02 — PRINCIPAL FOCUS AREAS</p>
                     <h2>Built across<br><em>the physical and digital.</em></h2>
@@ -178,7 +414,7 @@
 
             <div class="focus-cards">
                 <!-- Card 1 -->
-                <article class="focus-card">
+                <article class="focus-card reveal-on-scroll stagger-1">
                     <div class="card-top">
                         <span class="card-index">01</span>
                         <span class="card-tag">DIGITAL PLATFORMS</span>
@@ -202,7 +438,7 @@
                 </article>
 
                 <!-- Card 2 -->
-                <article class="focus-card">
+                <article class="focus-card reveal-on-scroll stagger-2">
                     <div class="card-top">
                         <span class="card-index">02</span>
                         <span class="card-tag">PHYSICAL COMPUTING</span>
@@ -227,7 +463,7 @@
                 </article>
 
                 <!-- Card 3 -->
-                <article class="focus-card">
+                <article class="focus-card reveal-on-scroll stagger-3">
                     <div class="card-top">
                         <span class="card-index">03</span>
                         <span class="card-tag">INTEGRATED ECOSYSTEMS</span>
@@ -259,7 +495,7 @@
         <!-- Products and Initiatives Section -->
         <section class="section wrap" id="products">
             <p class="kicker">03 — PRODUCTS &amp; INITIATIVES</p>
-            <div class="product-showcase">
+            <div class="product-showcase reveal-on-scroll">
                 <div class="product-panel">
                     <div class="product-copy">
                         <span class="status-badge">
@@ -316,7 +552,7 @@
 
         <!-- Vision / Brand Statement Section -->
         <section class="vision-section wrap" aria-label="Adhitra Philosophy">
-            <div class="vision-inner">
+            <div class="vision-inner reveal-on-scroll">
                 <span class="vision-mark" aria-hidden="true">“</span>
                 <blockquote class="vision-quote">
                     Good technology doesn’t need to be complicated.<br><em>It needs to make a difference.</em>
@@ -329,14 +565,14 @@
         <!-- Contact Section -->
         <section class="section wrap" id="contact">
             <div class="contact-grid">
-                <div class="contact-header">
+                <div class="contact-header reveal-on-scroll">
                     <p class="kicker">04 — START A CONVERSATION</p>
                     <h2>Have an idea?<br><em>Let’s make it useful.</em></h2>
                     <p class="contact-info-intro">Whether you want to explore collaboration, share technical insights, or
                         simply learn more about what we’re building, we welcome thoughtful conversations.</p>
                 </div>
 
-                <div class="contact-info">
+                <div class="contact-info reveal-on-scroll stagger-1">
                     <div class="email-card">
                         <div>
                             <p class="email-label">DIRECT EMAIL INQUIRIES</p>
