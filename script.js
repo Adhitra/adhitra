@@ -560,4 +560,134 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     revealElements.forEach((el) => el.classList.add("is-revealed"));
   }
+
+  // 7. Universal Interactive Email Modal & Direct Mailto Handler
+  const emailModal = document.getElementById("contact-email-modal");
+  const emailModalClose = document.getElementById("email-modal-close");
+  const emailModalCopyBtn = document.getElementById("email-modal-copy-btn");
+  const emailModalAddress = document.getElementById("email-modal-address");
+  const emailModalGmailBtn = document.getElementById("email-modal-gmail-btn");
+  const emailModalNativeBtn = document.getElementById("email-modal-native-btn");
+
+  const closeEmailModal = () => {
+    if (!emailModal) return;
+    emailModal.classList.remove("active");
+    document.body.style.overflow = "";
+  };
+
+  const openEmailModal = (email, subject, originalHref) => {
+    // 1. Copy to clipboard immediately
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).catch(() => {});
+    }
+
+    if (emailModalAddress) emailModalAddress.textContent = email;
+    if (emailModalCopyBtn) emailModalCopyBtn.textContent = "📋 Copy";
+
+    // 2. Set direct Gmail web compose URL
+    if (emailModalGmailBtn) {
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}`;
+      emailModalGmailBtn.href = gmailUrl;
+    }
+
+    // 3. Set native mailto
+    if (emailModalNativeBtn) {
+      emailModalNativeBtn.href = originalHref;
+    }
+
+    if (emailModal) {
+      emailModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    // Also trigger floating toast notification
+    showBrandToast(email);
+  };
+
+  if (emailModalClose) {
+    emailModalClose.addEventListener("click", closeEmailModal);
+  }
+
+  if (emailModal) {
+    emailModal.addEventListener("click", (e) => {
+      if (e.target === emailModal) {
+        closeEmailModal();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && emailModal && emailModal.classList.contains("active")) {
+      closeEmailModal();
+    }
+  });
+
+  if (emailModalCopyBtn) {
+    emailModalCopyBtn.addEventListener("click", () => {
+      const email = emailModalAddress?.textContent || "adhitra.dev@gmail.com";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          emailModalCopyBtn.textContent = "✓ Copied!";
+          setTimeout(() => {
+            if (emailModalCopyBtn) emailModalCopyBtn.textContent = "📋 Copy";
+          }, 2500);
+        }).catch(() => {});
+      }
+    });
+  }
+
+  // Intercept all mailto: links on the main page
+  const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+  mailtoLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault(); // Stop silent drop on OS without desktop mail client
+      const href = link.getAttribute("href") || "";
+      const emailMatch = href.match(/mailto:([^?]+)/);
+      const email = emailMatch ? emailMatch[1] : "adhitra.dev@gmail.com";
+      const subjectMatch = href.match(/[?&]subject=([^&]+)/);
+      const subject = subjectMatch ? decodeURIComponent(subjectMatch[1]) : "Adhitra Corporate Partnership Inquiry";
+
+      openEmailModal(email, subject, href);
+    });
+  });
+
+  // Floating Brand Toast Helper
+  const showBrandToast = (email) => {
+    let toast = document.getElementById("adhitra-mail-toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "adhitra-mail-toast";
+      toast.style.cssText =
+        "position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); " +
+        "background: rgba(7, 23, 29, 0.96); border: 1px solid #00E5D4; color: #EAF4F2; " +
+        "padding: 14px 22px; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; " +
+        "box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 229, 212, 0.25); " +
+        "display: flex; align-items: center; gap: 14px; z-index: 9999999; opacity: 0; pointer-events: none; " +
+        "transition: opacity 0.3s ease, transform 0.3s ease;";
+      document.body.appendChild(toast);
+    }
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+    toast.innerHTML = `
+      <span style="display:flex; align-items:center; gap:8px;">
+        <strong style="color:#00E5D4;">✓ Email Copied:</strong> ${email}
+      </span>
+      <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" 
+         style="background: #009E9B; color: #fff; font-weight: 700; font-size: 0.8rem; padding: 5px 12px; border-radius: 5px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+        Open in Gmail ↗
+      </a>
+    `;
+
+    toast.style.pointerEvents = "auto";
+    toast.style.opacity = "1";
+    toast.style.transform = "translateX(-50%) translateY(0)";
+
+    setTimeout(() => {
+      if (toast) {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateX(-50%) translateY(20px)";
+        toast.style.pointerEvents = "none";
+      }
+    }, 4500);
+  };
 });

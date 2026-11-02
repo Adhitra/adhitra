@@ -2455,3 +2455,189 @@ p {
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================================
+   Universal Contact Email Modal (Main Corporate Site)
+   ========================================================================== */
+.email-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 16, 20, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.email-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.email-modal-box {
+  background: #0b2229;
+  border: 1px solid var(--aqua);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 229, 212, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.email-modal-backdrop.active .email-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.email-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.email-modal-close:hover {
+  background: rgba(0, 229, 212, 0.1);
+  border-color: var(--aqua);
+  color: #ffffff;
+}
+
+.email-modal-badge {
+  font-family: 'DM Mono', monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--aqua);
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.email-modal-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.email-modal-title em {
+  font-style: normal;
+  color: var(--aqua);
+}
+
+.email-modal-subtitle {
+  font-size: 0.88rem;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.email-modal-field {
+  background: #06151a;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.email-modal-address {
+  font-family: 'DM Mono', monospace, monospace;
+  font-size: 0.92rem;
+  color: var(--aqua);
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.email-modal-copy-btn {
+  background: rgba(0, 158, 155, 0.25);
+  border: 1px solid var(--teal);
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.email-modal-copy-btn:hover {
+  background: var(--teal);
+  border-color: var(--aqua);
+}
+
+.email-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.email-modal-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.email-modal-action-btn.primary {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--aqua) 100%);
+  color: var(--bg-deep);
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(0, 229, 212, 0.35);
+}
+
+.email-modal-action-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0, 229, 212, 0.5);
+}
+
+.email-modal-action-btn.secondary {
+  background: rgba(16, 47, 55, 0.5);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.email-modal-action-btn.secondary:hover {
+  background: rgba(20, 58, 68, 0.85);
+  border-color: var(--line-strong);
+  color: #ffffff;
+}
+
+.email-modal-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 14px;
+}

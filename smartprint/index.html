@@ -106,6 +106,7 @@
 
     <!-- Site Header & Product Navigation -->
     <header class="site-header" id="header">
+        <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
         <div class="wrap header-inner">
             <a class="brand-combo" href="../" aria-label="Return to Adhitra Corporate Homepage">
                 <img src="../assets/brand/logo_symbol.svg" alt="Adhitra Symbol" class="logo-symbol" width="34" height="34">
@@ -124,17 +125,16 @@
 
             <nav class="product-nav" id="product-nav" aria-label="SmartPrint Product Navigation">
                 <ul class="nav-links">
-                    <li><a href="#overview" class="nav-item">Overview</a></li>
-                    <li><a href="#problem" class="nav-item">The Problem</a></li>
-                    <li><a href="#workflow" class="nav-item">How It Works</a></li>
+                    <li><a href="#overview" class="nav-item active">Overview</a></li>
+                    <li><a href="#workflow" class="nav-item">Workflow</a></li>
                     <li><a href="#features" class="nav-item">Features</a></li>
                     <li><a href="#interface" class="nav-item">Live UI</a></li>
                     <li><a href="#architecture" class="nav-item">Architecture</a></li>
                     <li><a href="#status" class="nav-item">Roadmap</a></li>
                 </ul>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <a class="nav-back-link" href="../#products">← Adhitra Home</a>
-                    <a class="btn-primary" style="padding: 9px 18px; font-size: 0.85rem;" href="#contact">Pilot Enquiry ↗</a>
+                <div class="header-actions">
+                    <a class="btn-nav-outline" href="../#products">← Adhitra Home</a>
+                    <a class="btn-nav-cta" href="#contact">Pilot Enquiry ↗</a>
                 </div>
             </nav>
         </div>
@@ -146,7 +146,7 @@
              ================================================================== -->
         <section class="hero-section wrap" id="overview">
             <div class="hero-grid">
-                <div class="hero-copy">
+                <div class="hero-copy reveal-on-scroll">
                     <div class="hero-status-row">
                         <span class="status-pill amber">
                             <span class="pulse-dot amber"></span>
@@ -190,7 +190,7 @@
                     </div>
                 </div>
 
-                <div class="hero-visual">
+                <div class="hero-visual reveal-on-scroll stagger-1">
                     <div class="mockup-frame">
                         <div class="mockup-header">
                             <div class="mockup-dots">
@@ -220,14 +220,16 @@
              PROBLEM & SOLUTION
              ================================================================== -->
         <section class="section wrap" id="problem">
-            <span class="section-kicker">01 // THE CHALLENGE</span>
-            <h2>Why Campus Printing Needs an <em>Engineering Reset.</em></h2>
-            <p class="section-lead">
-                Every semester, tens of thousands of students and faculty experience identical bottlenecks at campus xerox counters. SmartPrint addresses the systemic flaws in traditional walk-in printing.
-            </p>
+            <div class="section-header reveal-on-scroll">
+                <span class="section-kicker">01 // THE CHALLENGE</span>
+                <h2>Why Campus Printing Needs an <em>Engineering Reset.</em></h2>
+                <p class="section-lead">
+                    Every semester, tens of thousands of students and faculty experience identical bottlenecks at campus xerox counters. SmartPrint addresses the systemic flaws in traditional walk-in printing.
+                </p>
+            </div>
 
             <div class="problem-grid">
-                <article class="problem-card">
+                <article class="problem-card reveal-on-scroll stagger-1">
                     <div class="problem-num">01 / PRIVACY &amp; SECURITY RISKS</div>
                     <h3 class="problem-title">The Flash Drive &amp; Chat Vulnerability</h3>
                     <p class="problem-text">
@@ -235,7 +237,7 @@
                     </p>
                 </article>
 
-                <article class="problem-card">
+                <article class="problem-card reveal-on-scroll stagger-2">
                     <div class="problem-num">02 / PEAK-HOUR BOTTLENECKS</div>
                     <h3 class="problem-title">Between-Class Queue Delays</h3>
                     <p class="problem-text">
@@ -243,7 +245,7 @@
                     </p>
                 </article>
 
-                <article class="problem-card">
+                <article class="problem-card reveal-on-scroll stagger-3">
                     <div class="problem-num">03 / CONFIGURATION ERRORS</div>
                     <h3 class="problem-title">Manual Miscommunication &amp; Paper Waste</h3>
                     <p class="problem-text">
@@ -251,7 +253,7 @@
                     </p>
                 </article>
 
-                <article class="problem-card">
+                <article class="problem-card reveal-on-scroll stagger-4">
                     <div class="problem-num">04 / COUNTER OVERLOAD</div>
                     <h3 class="problem-title">Operator Fatigue &amp; Cash Chaos</h3>
                     <p class="problem-text">
@@ -260,7 +262,7 @@
                 </article>
             </div>
 
-            <div class="solution-strip">
+            <div class="solution-strip reveal-on-scroll stagger-1">
                 <div class="solution-text">
                     <h3>The SmartPrint Approach</h3>
                     <p>
@@ -292,14 +294,16 @@
              HOW IT WORKS (WORKFLOW)
              ================================================================== -->
         <section class="section wrap" id="workflow">
-            <span class="section-kicker">02 // SYSTEM WORKFLOW</span>
-            <h2>Frictionless End-to-End <em>Execution.</em></h2>
-            <p class="section-lead">
-                From mobile upload to physical collection tray in five deterministic steps. No apps to install from an app store, no shared drivers to configure, and zero guesswork.
-            </p>
+            <div class="section-header reveal-on-scroll">
+                <span class="section-kicker">02 // SYSTEM WORKFLOW</span>
+                <h2>Frictionless End-to-End <em>Execution.</em></h2>
+                <p class="section-lead">
+                    From mobile upload to physical collection tray in five deterministic steps. No apps to install from an app store, no shared drivers to configure, and zero guesswork.
+                </p>
+            </div>
 
             <div class="workflow-track">
-                <div class="step-card">
+                <div class="step-card reveal-on-scroll stagger-1">
                     <div class="step-number-badge">01</div>
                     <h3 class="step-title">Select &amp; Upload</h3>
                     <p class="step-desc">
@@ -308,7 +312,7 @@
                     <span class="step-tech-tag">React 18 + PDF.js</span>
                 </div>
 
-                <div class="step-card">
+                <div class="step-card reveal-on-scroll stagger-2">
                     <div class="step-number-badge">02</div>
                     <h3 class="step-title">Configure &amp; Quote</h3>
                     <p class="step-desc">
@@ -317,7 +321,7 @@
                     <span class="step-tech-tag">Edge Functions &bull; RLS</span>
                 </div>
 
-                <div class="step-card">
+                <div class="step-card reveal-on-scroll stagger-3">
                     <div class="step-number-badge">03</div>
                     <h3 class="step-title">Pay &amp; Dispatch</h3>
                     <p class="step-desc">
@@ -326,7 +330,7 @@
                     <span class="step-tech-tag">Cashfree PG + Idempotency</span>
                 </div>
 
-                <div class="step-card">
+                <div class="step-card reveal-on-scroll stagger-4">
                     <div class="step-number-badge">04</div>
                     <h3 class="step-title">Autonomous Spool</h3>
                     <p class="step-desc">
@@ -341,14 +345,16 @@
              KEY FEATURES & CAPABILITIES
              ================================================================== -->
         <section class="section wrap" id="features">
-            <span class="section-kicker">03 // CORE CAPABILITIES</span>
-            <h2>Engineered for Both Sides of the <em>Counter.</em></h2>
-            <p class="section-lead">
-                Built to deliver peace of mind to students and staff while giving xerox operators an enterprise-grade command dashboard.
-            </p>
+            <div class="section-header reveal-on-scroll">
+                <span class="section-kicker">03 // CORE CAPABILITIES</span>
+                <h2>Engineered for Both Sides of the <em>Counter.</em></h2>
+                <p class="section-lead">
+                    Built to deliver peace of mind to students and staff while giving xerox operators an enterprise-grade command dashboard.
+                </p>
+            </div>
 
             <div class="features-grid">
-                <div class="feature-box">
+                <div class="feature-box reveal-on-scroll stagger-1">
                     <div class="feature-icon">📱</div>
                     <h3 class="feature-heading">Zero-Install Mobile PWA</h3>
                     <p class="feature-text">
@@ -356,7 +362,7 @@
                     </p>
                 </div>
 
-                <div class="feature-box">
+                <div class="feature-box reveal-on-scroll stagger-2">
                     <div class="feature-icon">🔒</div>
                     <h3 class="feature-heading">Privacy by Design</h3>
                     <p class="feature-text">
@@ -364,7 +370,7 @@
                     </p>
                 </div>
 
-                <div class="feature-box">
+                <div class="feature-box reveal-on-scroll stagger-3">
                     <div class="feature-icon">⚡</div>
                     <h3 class="feature-heading">Authoritative Pricing Matrix</h3>
                     <p class="feature-text">
@@ -372,7 +378,7 @@
                     </p>
                 </div>
 
-                <div class="feature-box">
+                <div class="feature-box reveal-on-scroll stagger-4">
                     <div class="feature-icon">📊</div>
                     <h3 class="feature-heading">Counter Spool Console</h3>
                     <p class="feature-text">
@@ -380,7 +386,7 @@
                     </p>
                 </div>
 
-                <div class="feature-box">
+                <div class="feature-box reveal-on-scroll stagger-5">
                     <div class="feature-icon">🖥️</div>
                     <h3 class="feature-heading">Durable Local Print Agent</h3>
                     <p class="feature-text">
@@ -388,7 +394,7 @@
                     </p>
                 </div>
 
-                <div class="feature-box">
+                <div class="feature-box reveal-on-scroll stagger-6">
                     <div class="feature-icon">🔑</div>
                     <h3 class="feature-heading">Cryptographic Shop Pairing</h3>
                     <p class="feature-text">
@@ -403,167 +409,270 @@
              ================================================================== -->
         <section class="section gallery-section" id="interface">
             <div class="wrap">
-                <span class="section-kicker">04 // APPLICATION SHOWCASE</span>
-                <h2>Real Software. Real <em>Screenshots.</em></h2>
-                <p class="section-lead">
-                    No fabricated marketing mockups or generic AI dashboard templates. These captures represent the functional SmartPrint customer studio and shop console in current development.
-                </p>
-
-                <!-- Gallery Category Tabs -->
-                <div class="gallery-tabs-nav" role="tablist">
-                    <button class="gallery-tab-btn active" data-tab="tab-customer-mobile" role="tab" aria-selected="true">
-                        📱 Customer Mobile Studio
-                    </button>
-                    <button class="gallery-tab-btn" data-tab="tab-desktop-studio" role="tab" aria-selected="false">
-                        💻 Desktop Configuration
-                    </button>
-                    <button class="gallery-tab-btn" data-tab="tab-shop-dashboard" role="tab" aria-selected="false">
-                        🏪 Shop Owner Console
-                    </button>
-                    <button class="gallery-tab-btn" data-tab="tab-hardware-pricing" role="tab" aria-selected="false">
-                        ⚙️ Pricing &amp; Hardware
-                    </button>
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-kicker">04 // APPLICATION SHOWCASE</span>
+                    <h2>Real Software. Real <em>Screenshots.</em></h2>
+                    <p class="section-lead">
+                        Authentic captures from the SmartPrint engineering build — from self-service mobile upload to live shop counter telemetry and native printer discovery.
+                    </p>
                 </div>
 
-                <!-- Gallery Panels -->
-                <div class="gallery-panels-container">
-                    <!-- Panel 1: Customer Mobile Studio -->
-                    <div class="gallery-panel active" id="tab-customer-mobile" role="tabpanel">
-                        <div class="gallery-grid-dual">
-                            <div class="gallery-card">
-                                <div class="gallery-card-header">
-                                    <span class="gallery-card-title">Mobile Document Configuration Studio</span>
-                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
-                                </div>
-                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Mobile Print Studio Interface">
+                <div class="gallery-showcase-wrapper reveal-on-scroll stagger-1">
+                    <!-- Showcase Controls & Category Filters -->
+                <div class="gallery-controls-bar">
+                    <div class="gallery-filter-tabs" role="tablist" aria-label="Filter SmartPrint Interface Views">
+                        <button class="gallery-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                            All Views (8)
+                        </button>
+                        <button class="gallery-filter-btn" data-filter="mobile" role="tab" aria-selected="false">
+                            📱 Mobile PWA (2)
+                        </button>
+                        <button class="gallery-filter-btn" data-filter="desktop" role="tab" aria-selected="false">
+                            💻 Student Portal (2)
+                        </button>
+                        <button class="gallery-filter-btn" data-filter="counter" role="tab" aria-selected="false">
+                            🖥️ Shop Console (4)
+                        </button>
+                    </div>
+
+                    <div class="train-action-controls">
+                        <button class="train-pause-toggle" id="train-pause-toggle" type="button" aria-label="Toggle train auto-scroll">
+                            <span class="pulse-indicator"></span>
+                            <span class="pause-text">Auto-Scroll</span>
+                        </button>
+                        <button class="train-btn" id="train-prev" type="button" aria-label="Previous interface capture">←</button>
+                        <button class="train-btn" id="train-next" type="button" aria-label="Next interface capture">→</button>
+                    </div>
+                </div>
+
+                <!-- Train Showcase Viewport & Track -->
+                <div class="gallery-train-viewport" id="gallery-train-viewport">
+                    <div class="gallery-train-track" id="gallery-train-track">
+                        <!-- Car 01: Mobile Studio -->
+                        <div class="train-car-card" data-category="mobile">
+                            <div class="train-car-header">
+                                <span class="train-car-badge">MOBILE PWA // 01</span>
+                                <span class="train-zoom-badge zoomable-ui" data-title="SmartPrint Mobile Print Studio & Configuration">🔍 Zoom</span>
+                            </div>
+                            <div class="train-car-stage zoomable-ui" data-title="SmartPrint Mobile Print Studio & Configuration">
+                                <div class="mini-phone-mockup">
                                     <img src="../assets/smartprint/smartprint_mobile_studio.png"
                                         alt="SmartPrint Mobile Print Studio Configuration Interface"
                                         width="824" height="1760" loading="lazy">
                                 </div>
-                                <div class="gallery-card-caption">
-                                    <strong>Mobile-Optimized PWA:</strong> Shows station picker (AUCE Campus Centre), uploaded PDF preview (`SmartPrint_Demo_Page.pdf`), B&amp;W Laser vs Vibrant Color selector, and persistent checkout bottom bar.
-                                </div>
                             </div>
+                            <div class="train-car-footer">
+                                <h4 class="train-car-title">Mobile Print Studio</h4>
+                                <p class="train-car-desc">AUCE station picker, PDF preview, B&amp;W vs Color selector, and instant price quote.</p>
+                            </div>
+                        </div>
 
-                            <div class="gallery-card">
-                                <div class="gallery-card-header">
-                                    <span class="gallery-card-title">Live 4-Stage Job Tracker</span>
-                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
-                                </div>
-                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Mobile Live Job Tracker">
+                        <!-- Car 02: Mobile Tracker -->
+                        <div class="train-car-card" data-category="mobile">
+                            <div class="train-car-header">
+                                <span class="train-car-badge">MOBILE PWA // 02</span>
+                                <span class="train-zoom-badge zoomable-ui" data-title="SmartPrint Mobile Live 4-Stage Job Tracker">🔍 Zoom</span>
+                            </div>
+                            <div class="train-car-stage zoomable-ui" data-title="SmartPrint Mobile Live 4-Stage Job Tracker">
+                                <div class="mini-phone-mockup">
                                     <img src="../assets/smartprint/smartprint_mobile_tracking.png"
                                         alt="SmartPrint Mobile Realtime Job Tracking Screen"
                                         width="824" height="1760" loading="lazy">
                                 </div>
-                                <div class="gallery-card-caption">
-                                    <strong>Live Order Verification:</strong> Displays order reference `#SP-XXUH77`, station pickup instructions, and real-time state progression: <em>1 Paid &rarr; 2 Queued &rarr; 3 Printing &rarr; 4 Ready</em>.
-                                </div>
+                            </div>
+                            <div class="train-car-footer">
+                                <h4 class="train-car-title">4-Stage Job Tracker</h4>
+                                <p class="train-car-desc">Order ref <strong style="color:var(--aqua);">#SP-XXUH77</strong>, pickup counter instructions, and realtime state progression.</p>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Panel 2: Desktop Print Studio -->
-                    <div class="gallery-panel" id="tab-desktop-studio" role="tabpanel">
-                        <div class="gallery-grid-dual">
-                            <div class="gallery-card">
-                                <div class="gallery-card-header">
-                                    <span class="gallery-card-title">Configured Print Job with Server Quote</span>
-                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
-                                </div>
-                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Desktop Configured Print Job Screen">
-                                    <img src="../assets/smartprint/smartprint_job_configured.png"
-                                        alt="SmartPrint Desktop Configured Print Job View"
-                                        width="1280" height="900" loading="lazy">
-                                </div>
-                                <div class="gallery-card-caption">
-                                    <strong>Full Studio Interface:</strong> Real-time price breakdown (₹5.00 total), duplex savings calculation, paper GSM weight selector, binding options, and walk-in cash or online dispatch buttons.
+                        <!-- Car 03: Configured Desktop Job -->
+                        <div class="train-car-card" data-category="desktop">
+                            <div class="train-car-header">
+                                <span class="train-car-badge">STUDENT PORTAL // 03</span>
+                                <span class="train-zoom-badge zoomable-ui" data-title="SmartPrint Desktop Configured Print Job Screen">🔍 Zoom</span>
+                            </div>
+                            <div class="train-car-stage zoomable-ui" data-title="SmartPrint Desktop Configured Print Job Screen">
+                                <div class="mini-browser-mockup">
+                                    <div class="mini-browser-bar">
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                    </div>
+                                    <div class="mini-browser-content">
+                                        <img src="../assets/smartprint/smartprint_job_configured.png"
+                                            alt="SmartPrint Desktop Configured Print Job View"
+                                            width="1280" height="900" loading="lazy">
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="gallery-card">
-                                <div class="gallery-card-header">
-                                    <span class="gallery-card-title">Initial Document Dropzone &amp; Station Chooser</span>
-                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
-                                </div>
-                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Customer Dropzone and Station Selector">
-                                    <img src="../assets/smartprint/smartprint_customer_portal.png"
-                                        alt="SmartPrint Customer Initial Upload Interface"
-                                        width="1280" height="900" loading="lazy">
-                                </div>
-                                <div class="gallery-card-caption">
-                                    <strong>Clean Landing State:</strong> Drag-and-drop 256-bit SSL encrypted PDF upload zone, station operating hours, and live station pricing summary (B&amp;W: ₹2.00, Color: ₹10.00).
-                                </div>
+                            <div class="train-car-footer">
+                                <h4 class="train-car-title">Studio Quote Engine</h4>
+                                <p class="train-car-desc">Real-time price breakdown (₹5.00), duplex savings, GSM selector, and dispatch options.</p>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Panel 3: Shop Owner Console -->
-                    <div class="gallery-panel" id="tab-shop-dashboard" role="tabpanel">
-                        <div class="gallery-card">
-                            <div class="gallery-card-header">
-                                <span class="gallery-card-title">Authenticated Shop Owner Counter Console (AUCE Campus Centre)</span>
-                                <span class="gallery-zoom-prompt">🔍 Click to zoom full-resolution</span>
+                        <!-- Car 04: Dropzone Portal -->
+                        <div class="train-car-card" data-category="desktop">
+                            <div class="train-car-header">
+                                <span class="train-car-badge">STUDENT PORTAL // 04</span>
+                                <span class="train-zoom-badge zoomable-ui" data-title="SmartPrint Customer Dropzone and Station Selector">🔍 Zoom</span>
                             </div>
-                            <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Authenticated Shop Owner Dashboard">
-                                <img src="../assets/smartprint/smartprint_shop_dashboard.png"
-                                    alt="SmartPrint Shop Owner Console with Live Spool Queue and Metrics"
-                                    width="1366" height="920" loading="lazy">
+                            <div class="train-car-stage zoomable-ui" data-title="SmartPrint Customer Dropzone and Station Selector">
+                                <div class="mini-browser-mockup">
+                                    <div class="mini-browser-bar">
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                    </div>
+                                    <div class="mini-browser-content">
+                                        <img src="../assets/smartprint/smartprint_customer_portal.png"
+                                            alt="SmartPrint Customer Initial Upload Interface"
+                                            width="1280" height="900" loading="lazy">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="gallery-card-caption">
-                                <strong>Live Counter Operations:</strong> Active revenue tracking (₹134.00 today), total pages printed (14), active spool queue (1), 1 connected Windows agent PC, and the live orders table with print, issue, and collection actions.
+                            <div class="train-car-footer">
+                                <h4 class="train-car-title">Encrypted Dropzone</h4>
+                                <p class="train-car-desc">256-bit SSL encrypted PDF dropzone, campus operating hours, and live base rates.</p>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Panel 4: Pricing & Hardware Management -->
-                    <div class="gallery-panel" id="tab-hardware-pricing" role="tabpanel">
-                        <div class="gallery-grid-dual">
-                            <div class="gallery-card">
-                                <div class="gallery-card-header">
-                                    <span class="gallery-card-title">Granular Pricing &amp; Services Matrix</span>
-                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
-                                </div>
-                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Shop Pricing Matrix Configuration">
-                                    <img src="../assets/smartprint/smartprint_pricing_matrix.png"
-                                        alt="SmartPrint Pricing and Services Matrix Interface"
-                                        width="1366" height="920" loading="lazy">
-                                </div>
-                                <div class="gallery-card-caption">
-                                    <strong>Operator Rate Control:</strong> Per-page rates (B&amp;W ₹2, Color ₹10), duplex sheet discounts, paper grades (Standard 75 GSM, Executive Bond, Cardstock), binding add-ons (Staple, Spiral, Hard Cover), and operating hours.
+                        <!-- Car 05: Shop Owner Dashboard -->
+                        <div class="train-car-card" data-category="counter">
+                            <div class="train-car-header">
+                                <span class="train-car-badge">SHOP CONSOLE // 05</span>
+                                <span class="train-zoom-badge zoomable-ui" data-title="SmartPrint Authenticated Shop Owner Dashboard">🔍 Zoom</span>
+                            </div>
+                            <div class="train-car-stage zoomable-ui" data-title="SmartPrint Authenticated Shop Owner Dashboard">
+                                <div class="mini-browser-mockup">
+                                    <div class="mini-browser-bar">
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                    </div>
+                                    <div class="mini-browser-content">
+                                        <img src="../assets/smartprint/smartprint_shop_dashboard.png"
+                                            alt="SmartPrint Shop Owner Console with Live Spool Queue and Metrics"
+                                            width="1366" height="920" loading="lazy">
+                                    </div>
                                 </div>
                             </div>
+                            <div class="train-car-footer">
+                                <h4 class="train-car-title">AUCE Counter Dashboard</h4>
+                                <p class="train-car-desc">Today's revenue (₹134.00), 14 printed pages, active spool queue, and orders table.</p>
+                            </div>
+                        </div>
 
-                            <div class="gallery-card">
-                                <div class="gallery-card-header">
-                                    <span class="gallery-card-title">Discovered Counter PCs &amp; Hardware</span>
-                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
+                        <!-- Car 06: Pricing Matrix -->
+                        <div class="train-car-card" data-category="counter">
+                            <div class="train-car-header">
+                                <span class="train-car-badge">SHOP CONSOLE // 06</span>
+                                <span class="train-zoom-badge zoomable-ui" data-title="SmartPrint Shop Pricing Matrix Configuration">🔍 Zoom</span>
+                            </div>
+                            <div class="train-car-stage zoomable-ui" data-title="SmartPrint Shop Pricing Matrix Configuration">
+                                <div class="mini-browser-mockup">
+                                    <div class="mini-browser-bar">
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                    </div>
+                                    <div class="mini-browser-content">
+                                        <img src="../assets/smartprint/smartprint_pricing_matrix.png"
+                                            alt="SmartPrint Pricing and Services Matrix Interface"
+                                            width="1366" height="920" loading="lazy">
+                                    </div>
                                 </div>
-                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Discovered Hardware and Printers">
-                                    <img src="../assets/smartprint/smartprint_hardware_printers.png"
-                                        alt="SmartPrint Counter PCs and Connected Printer Drivers"
-                                        width="1366" height="920" loading="lazy">
+                            </div>
+                            <div class="train-car-footer">
+                                <h4 class="train-car-title">Pricing &amp; Services Matrix</h4>
+                                <p class="train-car-desc">Per-page rates (B&amp;W ₹2, Color ₹10), duplex discounts, and paper grades control.</p>
+                            </div>
+                        </div>
+
+                        <!-- Car 07: Hardware Discovery -->
+                        <div class="train-car-card" data-category="counter">
+                            <div class="train-car-header">
+                                <span class="train-car-badge">SHOP CONSOLE // 07</span>
+                                <span class="train-zoom-badge zoomable-ui" data-title="SmartPrint Discovered Hardware and Printers">🔍 Zoom</span>
+                            </div>
+                            <div class="train-car-stage zoomable-ui" data-title="SmartPrint Discovered Hardware and Printers">
+                                <div class="mini-browser-mockup">
+                                    <div class="mini-browser-bar">
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                    </div>
+                                    <div class="mini-browser-content">
+                                        <img src="../assets/smartprint/smartprint_hardware_printers.png"
+                                            alt="SmartPrint Counter PCs and Connected Printer Drivers"
+                                            width="1366" height="920" loading="lazy">
+                                    </div>
                                 </div>
-                                <div class="gallery-card-caption">
-                                    <strong>Native Hardware Discovery:</strong> Displays connected Counter PC (`Front Counter PC`, status READY) and paired Windows drivers (`Virtual_Test_Printer`, etc.) with reported driver capabilities.
+                            </div>
+                            <div class="train-car-footer">
+                                <h4 class="train-car-title">Hardware Discovery</h4>
+                                <p class="train-car-desc">Active Counter PC telemetry, driver status, and native OS spooler capabilities.</p>
+                            </div>
+                        </div>
+
+                        <!-- Car 08: Shop Portal Orders -->
+                        <div class="train-car-card" data-category="counter">
+                            <div class="train-car-header">
+                                <span class="train-car-badge">SHOP CONSOLE // 08</span>
+                                <span class="train-zoom-badge zoomable-ui" data-title="SmartPrint Campus Counter Portal Interface">🔍 Zoom</span>
+                            </div>
+                            <div class="train-car-stage zoomable-ui" data-title="SmartPrint Campus Counter Portal Interface">
+                                <div class="mini-browser-mockup">
+                                    <div class="mini-browser-bar">
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                        <span class="mini-browser-dot"></span>
+                                    </div>
+                                    <div class="mini-browser-content">
+                                        <img src="../assets/smartprint/smartprint_shop_portal.png"
+                                            alt="SmartPrint Campus Counter Portal Interface"
+                                            width="1366" height="920" loading="lazy">
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="train-car-footer">
+                                <h4 class="train-car-title">Counter Portal &amp; Orders</h4>
+                                <p class="train-car-desc">Counter dispatch console for order fulfillment, issue escalation, and cash collection.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Train Position Dots -->
+                <div class="gallery-train-dots" id="gallery-train-dots" role="tablist" aria-label="Train slide indicators">
+                    <!-- Dots dynamically generated or static for 8 items -->
+                    <button class="train-dot active" data-index="0" aria-label="Slide 1"></button>
+                    <button class="train-dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="train-dot" data-index="2" aria-label="Slide 3"></button>
+                    <button class="train-dot" data-index="3" aria-label="Slide 4"></button>
+                    <button class="train-dot" data-index="4" aria-label="Slide 5"></button>
+                    <button class="train-dot" data-index="5" aria-label="Slide 6"></button>
+                    <button class="train-dot" data-index="6" aria-label="Slide 7"></button>
+                    <button class="train-dot" data-index="7" aria-label="Slide 8"></button>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- ==================================================================
              SYSTEM ARCHITECTURE & TECHNICAL SPECIFICATION
              ================================================================== -->
         <section class="section wrap" id="architecture">
-            <span class="section-kicker">05 // TECHNICAL BLUEPRINT</span>
-            <h2>Distributed Multi-Tier <em>Architecture.</em></h2>
-            <p class="section-lead">
-                Engineered with strict separation of concerns, zero client trust, and resilient local queuing designed to withstand campus network fluctuations.
-            </p>
+            <div class="section-header reveal-on-scroll">
+                <span class="section-kicker">05 // TECHNICAL BLUEPRINT</span>
+                <h2>Distributed Multi-Tier <em>Architecture.</em></h2>
+                <p class="section-lead">
+                    Engineered with strict separation of concerns, zero client trust, and resilient local queuing designed to withstand campus network fluctuations.
+                </p>
+            </div>
 
-            <div class="arch-diagram-card">
+            <div class="arch-diagram-card reveal-on-scroll stagger-1">
                 <div class="arch-tiers-grid">
                     <!-- Tier 1 -->
                     <div class="arch-tier-box">
@@ -658,7 +767,7 @@
             </div>
 
             <!-- Hardware Candidate Panel -->
-            <div class="hardware-candidate-panel">
+            <div class="hardware-candidate-panel reveal-on-scroll stagger-2">
                 <div>
                     <span class="section-kicker" style="margin-bottom: 8px;">HARDWARE BENCHMARK</span>
                     <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: #ffffff;">Target Printer Evaluation</h3>
@@ -690,13 +799,15 @@
              DEVELOPMENT PROGRESS & ROADMAP
              ================================================================== -->
         <section class="section wrap" id="status">
-            <span class="section-kicker">06 // STATUS &amp; ROADMAP</span>
-            <h2>Engineering Milestones &amp; <em>Pilot Roadmap.</em></h2>
-            <p class="section-lead">
-                SmartPrint follows a phased engineering roadmap. Below is an unvarnished audit of completed milestones, current sprint deliverables, and scheduled campus pilot readiness.
-            </p>
+            <div class="section-header reveal-on-scroll">
+                <span class="section-kicker">06 // STATUS &amp; ROADMAP</span>
+                <h2>Engineering Milestones &amp; <em>Pilot Roadmap.</em></h2>
+                <p class="section-lead">
+                    SmartPrint follows a phased engineering roadmap. Below is an unvarnished audit of completed milestones, current sprint deliverables, and scheduled campus pilot readiness.
+                </p>
+            </div>
 
-            <div class="roadmap-timeline">
+            <div class="roadmap-timeline reveal-on-scroll stagger-1">
                 <div class="timeline-phase-row complete">
                     <div class="phase-number">PHASE 0 &amp; 1</div>
                     <div class="phase-title">PWA &amp; Validation</div>
@@ -769,7 +880,7 @@
              PILOT ENQUIRY & CALL TO ACTION
              ================================================================== -->
         <section class="section wrap" id="contact" style="border-bottom: none;">
-            <div class="cta-box">
+            <div class="cta-box reveal-on-scroll">
                 <span class="section-kicker" style="margin-bottom: 12px;">COLLABORATE WITH ADHITRA</span>
                 <h2>Interested in a Campus <em>Pilot Deployment?</em></h2>
                 <p class="cta-lead">
@@ -779,9 +890,6 @@
                 <div class="cta-actions-row">
                     <a class="btn-primary" href="mailto:adhitra.dev@gmail.com?subject=SmartPrint%20Pilot%20Partnership%20Enquiry">
                         Initiate Pilot Dialogue ↗
-                    </a>
-                    <a class="btn-secondary" href="https://github.com/Adhitra/SmartPrint-by-Adhitra" target="_blank" rel="noopener noreferrer">
-                        Inspect GitHub Repository ↗
                     </a>
                 </div>
 
@@ -822,7 +930,7 @@
          FOOTER
          ================================================================== -->
     <footer class="site-footer">
-        <div class="wrap">
+        <div class="wrap reveal-on-scroll">
             <div class="footer-top">
                 <div class="footer-brand">
                     <a class="brand-combo" href="../" aria-label="Return to Adhitra Corporate Homepage">
@@ -855,7 +963,6 @@
                         <li><a href="../#home">Adhitra Corporate Home ↗</a></li>
                         <li><a href="../#focus">Focus Areas &amp; Capabilities ↗</a></li>
                         <li><a href="../#products">Products &amp; Initiatives ↗</a></li>
-                        <li><a href="https://github.com/Adhitra/SmartPrint-by-Adhitra" target="_blank" rel="noopener noreferrer">SmartPrint GitHub Repo ↗</a></li>
                         <li><a href="mailto:adhitra.dev@gmail.com">Contact Engineering ↗</a></li>
                     </ul>
                 </div>
@@ -869,6 +976,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Universal Email Action Modal -->
+    <div id="contact-email-modal" class="email-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="email-modal-title">
+        <div class="email-modal-box">
+            <button class="email-modal-close" id="email-modal-close" aria-label="Close dialog">&times;</button>
+            <span class="email-modal-badge">DIRECT INQUIRY // ADHITRA</span>
+            <h3 class="email-modal-title" id="email-modal-title">Send a message to <em>Adhitra</em></h3>
+            <p class="email-modal-subtitle">Connect directly with our engineering and pilot deployment team.</p>
+            <div class="email-modal-field">
+                <span class="email-modal-address" id="email-modal-address">adhitra.dev@gmail.com</span>
+                <button class="email-modal-copy-btn" id="email-modal-copy-btn" type="button">📋 Copy</button>
+            </div>
+            <div class="email-modal-actions">
+                <a class="email-modal-action-btn primary" id="email-modal-gmail-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=adhitra.dev@gmail.com&su=SmartPrint%20Pilot%20Partnership%20Enquiry" target="_blank" rel="noopener noreferrer">
+                    Open in Gmail Web ↗
+                </a>
+                <a class="email-modal-action-btn secondary" id="email-modal-native-btn" href="mailto:adhitra.dev@gmail.com?subject=SmartPrint%20Pilot%20Partnership%20Enquiry">
+                    Launch Default Mail Client
+                </a>
+            </div>
+            <p class="email-modal-note">Email address automatically copied to your clipboard.</p>
+        </div>
+    </div>
 
     <!-- Client Script -->
     <script src="script.js"></script>

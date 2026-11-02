@@ -73,8 +73,7 @@
             "https://www.linkedin.com/company/adhitra/",
             "https://www.instagram.com/adhitra.tech/",
             "https://www.youtube.com/@AdhitraTech",
-            "https://x.com/AdhitraTech",
-            "https://github.com/Adhitra"
+            "https://x.com/AdhitraTech"
           ],
           "knowsAbout": [
             "Software & Digital Platforms",
@@ -577,13 +576,9 @@
                         <p class="product-meta">SmartPrint is an ongoing initiative exploring how modern software,
                             purpose-built firmware, and connected workflows can transform printing into a reliable,
                             frictionless experience.</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
+                        <div style="margin-top: 20px;">
                             <a class="btn-primary" href="smartprint/">
                                 Explore SmartPrint Product Overview →
-                            </a>
-                            <a class="btn-secondary" href="https://github.com/Adhitra/SmartPrint-by-Adhitra"
-                                target="_blank" rel="noopener noreferrer">
-                                GitHub Repository ↗
                             </a>
                         </div>
                     </div>
@@ -713,6 +708,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Universal Email Action Modal -->
+    <div id="contact-email-modal" class="email-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="email-modal-title">
+        <div class="email-modal-box">
+            <button class="email-modal-close" id="email-modal-close" aria-label="Close dialog">&times;</button>
+            <span class="email-modal-badge">DIRECT INQUIRY // ADHITRA</span>
+            <h3 class="email-modal-title" id="email-modal-title">Connect with <em>Adhitra</em></h3>
+            <p class="email-modal-subtitle">Direct communication with our engineering and executive leadership.</p>
+            <div class="email-modal-field">
+                <span class="email-modal-address" id="email-modal-address">adhitra.dev@gmail.com</span>
+                <button class="email-modal-copy-btn" id="email-modal-copy-btn" type="button">📋 Copy</button>
+            </div>
+            <div class="email-modal-actions">
+                <a class="email-modal-action-btn primary" id="email-modal-gmail-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=adhitra.dev@gmail.com" target="_blank" rel="noopener noreferrer">
+                    Open in Gmail Web ↗
+                </a>
+                <a class="email-modal-action-btn secondary" id="email-modal-native-btn" href="mailto:adhitra.dev@gmail.com">
+                    Launch Default Mail Client
+                </a>
+            </div>
+            <p class="email-modal-note">Email address automatically copied to your clipboard.</p>
+        </div>
+    </div>
 
     <!-- Main Javascript -->
     <script src="script.js"></script>
