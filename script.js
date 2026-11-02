@@ -312,9 +312,40 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
+      let transitionSafetyTimer = null;
+
+      // Reliable snap logic to keep track strictly within valid slide bounds
+      function snapClonesIfNeeded() {
+        if (currentTrackIndex >= totalOriginalSlides + 1) {
+          carouselTrack.style.transition = "none";
+          currentTrackIndex = 1;
+          carouselTrack.style.transform = "translateX(-100%)";
+          void carouselTrack.offsetWidth; // Force layout
+        } else if (currentTrackIndex <= 0) {
+          carouselTrack.style.transition = "none";
+          currentTrackIndex = totalOriginalSlides;
+          carouselTrack.style.transform = `translateX(-${totalOriginalSlides * 100}%)`;
+          void carouselTrack.offsetWidth; // Force layout
+        } else if (currentTrackIndex > totalOriginalSlides + 1 || currentTrackIndex < 0) {
+          // Emergency recovery if somehow out of bounds
+          const validOrig = getOriginalIndex(currentTrackIndex);
+          currentTrackIndex = validOrig + 1;
+          carouselTrack.style.transition = "none";
+          carouselTrack.style.transform = `translateX(-${currentTrackIndex * 100}%)`;
+          void carouselTrack.offsetWidth;
+        }
+      }
+
       // Smooth horizontal track sliding transition
       function moveToTrackIndex(newTrackIndex) {
         if (isTransitioning) return;
+        if (document.hidden) return; // Never advance while tab is in background
+
+        // If track position was somehow corrupted or out of bounds, snap it first
+        if (currentTrackIndex > totalOriginalSlides + 1 || currentTrackIndex < 0) {
+          snapClonesIfNeeded();
+        }
+
         isTransitioning = true;
         currentTrackIndex = newTrackIndex;
 
@@ -327,21 +358,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         startTimer();
 
-        // Safety fallback to unblock transition flag if event fails
-        setTimeout(() => {
+        // Safety fallback timer: guarantees clones snap even if transitionend is suppressed
+        clearTimeout(transitionSafetyTimer);
+        transitionSafetyTimer = setTimeout(() => {
+          snapClonesIfNeeded();
           isTransitioning = false;
-        }, 750);
+        }, 700);
       }
 
       function nextSlide() {
-        if (isTransitioning) return;
+        if (isTransitioning || document.hidden) return;
         // From Slide 3 (index 3), advances smoothly to index 4 (Clone of Slide 1)
         // SLIDING SMOOTHLY TO THE LEFT! (translateX goes from -300% to -400%)
         moveToTrackIndex(currentTrackIndex + 1);
       }
 
       function prevSlide() {
-        if (isTransitioning) return;
+        if (isTransitioning || document.hidden) return;
         // From Slide 1 (index 1), moves to index 0 (Clone of Slide 3)
         // Sliding smoothly to the right (translateX goes from -100% to 0%)
         moveToTrackIndex(currentTrackIndex - 1);
@@ -350,22 +383,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Snap clones seamlessly without visual jump
       carouselTrack.addEventListener("transitionend", (e) => {
         if (e.target !== carouselTrack || e.propertyName !== "transform") return;
-
-        // If we reached Clone of Slide 1 (at index 4), instantly snap back to Original Slide 1 (at index 1)
-        if (currentTrackIndex === totalOriginalSlides + 1) {
-          carouselTrack.style.transition = "none";
-          currentTrackIndex = 1;
-          carouselTrack.style.transform = "translateX(-100%)";
-          void carouselTrack.offsetWidth; // Force reflow
-        }
-        // If we reached Clone of Slide 3 (at index 0), instantly snap back to Original Slide 3 (at index 3)
-        else if (currentTrackIndex === 0) {
-          carouselTrack.style.transition = "none";
-          currentTrackIndex = totalOriginalSlides;
-          carouselTrack.style.transform = `translateX(-${totalOriginalSlides * 100}%)`;
-          void carouselTrack.offsetWidth; // Force reflow
-        }
-
+        clearTimeout(transitionSafetyTimer);
+        snapClonesIfNeeded();
         isTransitioning = false;
       });
 
@@ -421,6 +440,34 @@ document.addEventListener("DOMContentLoaded", () => {
       carouselSection.addEventListener("focusin", pauseCarousel);
       carouselSection.addEventListener("focusout", resumeCarousel);
 
+      // Tab Visibility Change (handles switching tabs away & returning)
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          // Immediately pause auto-advance and animations when tab is hidden
+          pauseCarousel();
+          stopTimer();
+        } else {
+          // Immediately recover when returning to tab:
+          // 1. Remove entrance animation class so elements are never frozen in animation
+          carouselSection.classList.remove("hero-entering");
+
+          // 2. Normalize track position so it is strictly within valid bounds (1, 2, or 3)
+          const validOrig = getOriginalIndex(currentTrackIndex);
+          currentTrackIndex = validOrig + 1;
+          carouselTrack.style.transition = "none";
+          carouselTrack.style.transform = `translateX(-${currentTrackIndex * 100}%)`;
+          void carouselTrack.offsetWidth;
+          isTransitioning = false;
+
+          // 3. Resync slides & indicator progress
+          updateSlideStates(validOrig);
+          updateIndicators(validOrig);
+
+          // 4. Resume progression cleanly
+          resumeCarousel();
+        }
+      });
+
       // Keyboard navigation
       document.addEventListener("keydown", (e) => {
         if (carouselSection.contains(document.activeElement)) {
@@ -475,15 +522,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Initialize state for first slide with entrance animations
+      // Initialize state for first slide
       updateSlideStates(0);
       updateIndicators(0);
       startTimer();
 
-      // Cleanly conclude entrance animation after it finishes running
-      setTimeout(() => {
-        carouselSection.classList.remove("hero-entering");
-      }, 1400);
+      // Trigger entrance animation on initial foreground load and cleanly conclude it
+      if (!document.hidden) {
+        carouselSection.classList.add("hero-entering");
+        setTimeout(() => {
+          carouselSection.classList.remove("hero-entering");
+        }, 1200);
+      }
     }
   }
 

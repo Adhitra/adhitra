@@ -551,10 +551,12 @@ p {
   min-width: 100%;
   box-sizing: border-box;
   opacity: 1;
+  visibility: visible;
 }
 
 .carousel-slide.active {
   opacity: 1;
+  visibility: visible;
 }
 
 /* Staggered entrance on initial load */
