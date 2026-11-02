@@ -1,0 +1,6 @@
+# Adhitra Corporate Website — Robots Exclusion Standard
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://adhitra.github.io/adhitra-website/sitemap.xml

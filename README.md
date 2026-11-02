@@ -22,7 +22,8 @@ Approved logo assets are located in `assets/brand/`:
 - **Main Header & Footer**: `assets/brand/logo_full.svg` (Transparent full logo with icon mark and wordmark)
 - **Favicon**: `assets/brand/logo_symbol.svg` (SVG vector) with fallback `assets/brand/logo_symbol.png`
 - **Hero Schematic Mark**: `assets/brand/logo_symbol.svg`
-- **Social Sharing / Open Graph**: `assets/brand/logo_full_dark_bg.png`
+- **Social Sharing / Open Graph**: `assets/brand/og_preview.png` (Optimized 1200×630 card)
+- **Raster Fallback Logo**: `assets/brand/logo_full_dark_bg.png`
 
 ### Official Brand Palette
 
@@ -40,15 +41,18 @@ Approved logo assets are located in `assets/brand/`:
 ```
 adhitra-website/
 ├── .nojekyll             # Prevents GitHub Pages Jekyll processing
-├── index.html            # Main site structure & semantic markup
-├── styles.css            # Responsive design system & component styles
-├── script.js             # Mobile navigation, scroll-spy & dynamic year
+├── robots.txt            # Search engine crawler instructions & sitemap link
+├── sitemap.xml           # XML sitemap for search engine indexing
+├── index.html            # Main site structure & semantic markup with SEO/OG tags
+├── styles.css            # Responsive design system, custom scrollbar & animations
+├── script.js             # Mobile nav, hero carousel, scroll-spy & scroll reveals
 ├── README.md             # Project & deployment documentation
 └── assets/
     └── brand/            # Official vector & raster brand assets
         ├── logo_full.svg
         ├── logo_name.svg
         ├── logo_symbol.svg
+        ├── og_preview.png     # 1200x630 social sharing preview card
         └── ...
 ```
 
