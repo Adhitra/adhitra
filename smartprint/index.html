@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0C232B">
+    <meta name="color-scheme" content="dark">
+    <title>SmartPrint by Adhitra — Autonomous Campus Document Printing Platform</title>
+
+    <!-- SEO Meta Directives -->
+    <meta name="description"
+        content="SmartPrint by Adhitra is an autonomous, self-service document printing platform for colleges, universities, libraries, and high-footfall premises. In active engineering.">
+    <meta name="author" content="Adhitra Technologies">
+    <meta name="keywords"
+        content="SmartPrint, Adhitra, self-service printing, campus printing, university xerox, print kiosk, autonomous printing, cloud document printing, IoT printing, AUCE pilot">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://adhitra.github.io/adhitra/smartprint/">
+
+    <!-- Open Graph (Social Sharing Preview) -->
+    <meta property="og:site_name" content="Adhitra">
+    <meta property="og:title" content="SmartPrint by Adhitra — Autonomous Campus Document Printing Platform">
+    <meta property="og:description"
+        content="Self-service, private document printing for colleges and libraries. Explore the product architecture, real application interface, and development milestones.">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://adhitra.github.io/adhitra/smartprint/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="../assets/smartprint/smartprint_job_configured.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="SmartPrint by Adhitra Application Interface">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AdhitraTech">
+    <meta name="twitter:creator" content="@AdhitraTech">
+    <meta name="twitter:title" content="SmartPrint by Adhitra — Autonomous Campus Document Printing Platform">
+    <meta name="twitter:description"
+        content="Eliminating xerox queues, USB security risks, and printing friction with self-service mobile ordering and automated counter queue synchronization.">
+    <meta name="twitter:image" content="../assets/smartprint/smartprint_job_configured.png">
+
+    <!-- Favicon using approved Adhitra symbol -->
+    <link rel="icon" type="image/svg+xml" href="../assets/brand/logo_symbol.svg">
+    <link rel="alternate icon" type="image/png" href="../assets/brand/logo_symbol.png">
+    <link rel="apple-touch-icon" href="../assets/brand/logo_symbol.png">
+
+    <!-- Google Fonts: Manrope (Headings & UI) & DM Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@500;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data: Schema.org Product & SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://adhitra.github.io/adhitra/smartprint/#software",
+          "name": "SmartPrint by Adhitra",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web, Windows 10/11, Linux",
+          "description": "Self-service, autonomous document printing kiosk platform designed for colleges, universities, and high-footfall campuses.",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/PreOrder",
+            "price": "0",
+            "priceCurrency": "INR"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Adhitra",
+            "url": "https://adhitra.github.io/adhitra/"
+          }
+        },
+        {
+          "@type": "Product",
+          "@id": "https://adhitra.github.io/adhitra/smartprint/#product",
+          "name": "SmartPrint Campus Kiosk Platform",
+          "brand": {
+            "@type": "Brand",
+            "name": "Adhitra"
+          },
+          "description": "A connected campus document printing experience combining mobile self-service web ordering with an automated local counter spooler.",
+          "category": "Connected Printing Solutions",
+          "releaseNotes": "Currently in Phase 4 of active pre-release engineering and campus pilot preparation."
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main product content</a>
+
+    <!-- Ambient Glow Accents -->
+    <div class="ambient-glow glow-top" aria-hidden="true"></div>
+    <div class="ambient-glow glow-mid" aria-hidden="true"></div>
+    <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+    <!-- Site Header & Product Navigation -->
+    <header class="site-header" id="header">
+        <div class="wrap header-inner">
+            <a class="brand-combo" href="../" aria-label="Return to Adhitra Corporate Homepage">
+                <img src="../assets/brand/logo_symbol.svg" alt="Adhitra Symbol" class="logo-symbol" width="34" height="34">
+                <div class="logo-typography">
+                    <span class="logo-text-product">Smart<span>Print</span></span>
+                    <span class="logo-sub-tag">by ADHITRA</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="product-nav">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="product-nav" id="product-nav" aria-label="SmartPrint Product Navigation">
+                <ul class="nav-links">
+                    <li><a href="#overview" class="nav-item">Overview</a></li>
+                    <li><a href="#problem" class="nav-item">The Problem</a></li>
+                    <li><a href="#workflow" class="nav-item">How It Works</a></li>
+                    <li><a href="#features" class="nav-item">Features</a></li>
+                    <li><a href="#interface" class="nav-item">Live UI</a></li>
+                    <li><a href="#architecture" class="nav-item">Architecture</a></li>
+                    <li><a href="#status" class="nav-item">Roadmap</a></li>
+                </ul>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a class="nav-back-link" href="../#products">← Adhitra Home</a>
+                    <a class="btn-primary" style="padding: 9px 18px; font-size: 0.85rem;" href="#contact">Pilot Enquiry ↗</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- ==================================================================
+             HERO SECTION
+             ================================================================== -->
+        <section class="hero-section wrap" id="overview">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-status-row">
+                        <span class="status-pill amber">
+                            <span class="pulse-dot amber"></span>
+                            In Active R&amp;D &bull; Phase 4
+                        </span>
+                        <span class="status-pill">
+                            Pilot Candidate: AUCE Visakhapatnam
+                        </span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Autonomous Document Printing for <em>Campuses &amp; Libraries.</em>
+                    </h1>
+
+                    <p class="hero-lead">
+                        SmartPrint is a self-service document printing platform engineered by Adhitra. It eliminates crowded xerox queues, awkward WhatsApp forwards, and USB drive malware risks by connecting a mobile customer studio to an automated local counter spooler.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn-primary" href="#interface">
+                            View Live Interface ↘
+                        </a>
+                        <a class="btn-secondary" href="#architecture">
+                            System Architecture →
+                        </a>
+                    </div>
+
+                    <div class="hero-specs-bar">
+                        <div class="spec-cell">
+                            <span class="spec-label">Core Architecture</span>
+                            <span class="spec-val">Zero-Client-Trust</span>
+                        </div>
+                        <div class="spec-cell">
+                            <span class="spec-label">Agent Automation</span>
+                            <span class="spec-val">Atomic Journaling</span>
+                        </div>
+                        <div class="spec-cell">
+                            <span class="spec-label">Verification</span>
+                            <span class="spec-val">81 Tests Passing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="mockup-frame">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="mockup-address">smartprint.adhitra.internal / station-01</span>
+                            <span class="mockup-tag">LIVE SPOOLER</span>
+                        </div>
+                        <div class="mockup-image-container zoomable-ui" data-title="SmartPrint Customer Print Studio & Order Configuration">
+                            <img src="../assets/smartprint/smartprint_job_configured.png"
+                                alt="SmartPrint Document Configuration and Order Summary Interface"
+                                width="1280" height="900" loading="eager">
+                            <div class="mockup-floating-badge">
+                                <div class="badge-icon-box">⚡</div>
+                                <div class="badge-info">
+                                    <span class="badge-title">Order #SP-XXUH77</span>
+                                    <span class="badge-sub">Authoritative Quote: ₹5.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             PROBLEM & SOLUTION
+             ================================================================== -->
+        <section class="section wrap" id="problem">
+            <span class="section-kicker">01 // THE CHALLENGE</span>
+            <h2>Why Campus Printing Needs an <em>Engineering Reset.</em></h2>
+            <p class="section-lead">
+                Every semester, tens of thousands of students and faculty experience identical bottlenecks at campus xerox counters. SmartPrint addresses the systemic flaws in traditional walk-in printing.
+            </p>
+
+            <div class="problem-grid">
+                <article class="problem-card">
+                    <div class="problem-num">01 / PRIVACY &amp; SECURITY RISKS</div>
+                    <h3 class="problem-title">The Flash Drive &amp; Chat Vulnerability</h3>
+                    <p class="problem-text">
+                        Handing personal USB drives to public counter PCs exposes personal devices to malware and rootkits. Forwarding private lab records, ID proofs, and resumes through personal WhatsApp chats creates an unmanaged data trail on shop computers.
+                    </p>
+                </article>
+
+                <article class="problem-card">
+                    <div class="problem-num">02 / PEAK-HOUR BOTTLENECKS</div>
+                    <h3 class="problem-title">Between-Class Queue Delays</h3>
+                    <p class="problem-text">
+                        During the 15-minute rush before morning lectures or lab submissions, 30+ students crowd a single counter operator. Manual file browsing, page opening, and paper alignment create extreme frustration and missed deadlines.
+                    </p>
+                </article>
+
+                <article class="problem-card">
+                    <div class="problem-num">03 / CONFIGURATION ERRORS</div>
+                    <h3 class="problem-title">Manual Miscommunication &amp; Paper Waste</h3>
+                    <p class="problem-text">
+                        Ambiguous spoken instructions ("print pages 3 to 14, double-sided, except page 8") frequently lead to misprinted reams, squandered toner, and tense pricing disputes between students and shop owners.
+                    </p>
+                </article>
+
+                <article class="problem-card">
+                    <div class="problem-num">04 / COUNTER OVERLOAD</div>
+                    <h3 class="problem-title">Operator Fatigue &amp; Cash Chaos</h3>
+                    <p class="problem-text">
+                        Shop owners spend over 65% of their working day manually opening files, verifying individual UPI payment screenshots on personal phones, and calculating loose change rather than monitoring print hardware.
+                    </p>
+                </article>
+            </div>
+
+            <div class="solution-strip">
+                <div class="solution-text">
+                    <h3>The SmartPrint Approach</h3>
+                    <p>
+                        A decoupled system architecture where customers configure documents, inspect authoritative quotes, and submit orders from their personal mobile browsers. Orders flow directly into an automated local spooler on the shop counter PC.
+                    </p>
+                </div>
+                <div class="solution-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>Zero USB flash drives or chat forwards</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>Cryptographically verified payment &amp; quotes</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>24-Hour automated document deletion</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">✓</span>
+                        <span>Native spooler driver integration</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             HOW IT WORKS (WORKFLOW)
+             ================================================================== -->
+        <section class="section wrap" id="workflow">
+            <span class="section-kicker">02 // SYSTEM WORKFLOW</span>
+            <h2>Frictionless End-to-End <em>Execution.</em></h2>
+            <p class="section-lead">
+                From mobile upload to physical collection tray in five deterministic steps. No apps to install from an app store, no shared drivers to configure, and zero guesswork.
+            </p>
+
+            <div class="workflow-track">
+                <div class="step-card">
+                    <div class="step-number-badge">01</div>
+                    <h3 class="step-title">Select &amp; Upload</h3>
+                    <p class="step-desc">
+                        User selects their campus station (e.g. AUCE Printing Centre) and drops their PDF. Client-side WebAssembly inspects page counts and geometry instantly.
+                    </p>
+                    <span class="step-tech-tag">React 18 + PDF.js</span>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-badge">02</div>
+                    <h3 class="step-title">Configure &amp; Quote</h3>
+                    <p class="step-desc">
+                        Choose B&amp;W or Color, copies, page ranges (`1-5, 8`), duplex with discount, paper GSM, and binding options. Server validates inputs and returns authoritative pricing.
+                    </p>
+                    <span class="step-tech-tag">Edge Functions &bull; RLS</span>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-badge">03</div>
+                    <h3 class="step-title">Pay &amp; Dispatch</h3>
+                    <p class="step-desc">
+                        Checkout seamlessly via UPI QR (Cashfree) or select Walk-in Counter Cash. An instant public tracking reference (`#SP-XXXXXX`) is generated.
+                    </p>
+                    <span class="step-tech-tag">Cashfree PG + Idempotency</span>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-badge">04</div>
+                    <h3 class="step-title">Autonomous Spool</h3>
+                    <p class="step-desc">
+                        Counter print agent claims the job atomically, verifies SHA-256 checksum integrity, spools to the printer driver, and updates the customer's live tracking status.
+                    </p>
+                    <span class="step-tech-tag">Python 3.11 + winspool.drv</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             KEY FEATURES & CAPABILITIES
+             ================================================================== -->
+        <section class="section wrap" id="features">
+            <span class="section-kicker">03 // CORE CAPABILITIES</span>
+            <h2>Engineered for Both Sides of the <em>Counter.</em></h2>
+            <p class="section-lead">
+                Built to deliver peace of mind to students and staff while giving xerox operators an enterprise-grade command dashboard.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-heading">Zero-Install Mobile PWA</h3>
+                    <p class="feature-text">
+                        Runs directly inside Safari, Chrome, or Firefox. No bulky mobile app downloads, zero app store friction, and instant QR-scan launch at station entry.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-heading">Privacy by Design</h3>
+                    <p class="feature-text">
+                        Uploaded documents are stored in private encrypted storage buckets, accessed exclusively via short-lived signed URLs, and automatically deleted within 24 hours.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-heading">Authoritative Pricing Matrix</h3>
+                    <p class="feature-text">
+                        Zero client trust. Server backend strictly re-validates all page ranges, duplex rules, and pricing tiers to ensure mathematical billing accuracy.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-heading">Counter Spool Console</h3>
+                    <p class="feature-text">
+                        Dedicated web and Electron dashboard for shop owners showing today's revenue, completed volume, active queues, and one-click reprint controls.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">🖥️</div>
+                    <h3 class="feature-heading">Durable Local Print Agent</h3>
+                    <p class="feature-text">
+                        Lightweight daemon running on counter Windows or Linux mini-PCs. Uses atomic disk journaling (`os.fsync`) to prevent accidental double-printing after power cuts.
+                    </p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">🔑</div>
+                    <h3 class="feature-heading">Cryptographic Shop Pairing</h3>
+                    <p class="feature-text">
+                        Pair counter PCs in seconds using 15-minute expiring pairing codes. Scoped device tokens are hashed with SHA-256 with zero database secret leakage.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             ACTUAL APPLICATION INTERFACE SHOWCASE
+             ================================================================== -->
+        <section class="section gallery-section" id="interface">
+            <div class="wrap">
+                <span class="section-kicker">04 // APPLICATION SHOWCASE</span>
+                <h2>Real Software. Real <em>Screenshots.</em></h2>
+                <p class="section-lead">
+                    No fabricated marketing mockups or generic AI dashboard templates. These captures represent the functional SmartPrint customer studio and shop console in current development.
+                </p>
+
+                <!-- Gallery Category Tabs -->
+                <div class="gallery-tabs-nav" role="tablist">
+                    <button class="gallery-tab-btn active" data-tab="tab-customer-mobile" role="tab" aria-selected="true">
+                        📱 Customer Mobile Studio
+                    </button>
+                    <button class="gallery-tab-btn" data-tab="tab-desktop-studio" role="tab" aria-selected="false">
+                        💻 Desktop Configuration
+                    </button>
+                    <button class="gallery-tab-btn" data-tab="tab-shop-dashboard" role="tab" aria-selected="false">
+                        🏪 Shop Owner Console
+                    </button>
+                    <button class="gallery-tab-btn" data-tab="tab-hardware-pricing" role="tab" aria-selected="false">
+                        ⚙️ Pricing &amp; Hardware
+                    </button>
+                </div>
+
+                <!-- Gallery Panels -->
+                <div class="gallery-panels-container">
+                    <!-- Panel 1: Customer Mobile Studio -->
+                    <div class="gallery-panel active" id="tab-customer-mobile" role="tabpanel">
+                        <div class="gallery-grid-dual">
+                            <div class="gallery-card">
+                                <div class="gallery-card-header">
+                                    <span class="gallery-card-title">Mobile Document Configuration Studio</span>
+                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
+                                </div>
+                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Mobile Print Studio Interface">
+                                    <img src="../assets/smartprint/smartprint_mobile_studio.png"
+                                        alt="SmartPrint Mobile Print Studio Configuration Interface"
+                                        width="824" height="1760" loading="lazy">
+                                </div>
+                                <div class="gallery-card-caption">
+                                    <strong>Mobile-Optimized PWA:</strong> Shows station picker (AUCE Campus Centre), uploaded PDF preview (`SmartPrint_Demo_Page.pdf`), B&amp;W Laser vs Vibrant Color selector, and persistent checkout bottom bar.
+                                </div>
+                            </div>
+
+                            <div class="gallery-card">
+                                <div class="gallery-card-header">
+                                    <span class="gallery-card-title">Live 4-Stage Job Tracker</span>
+                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
+                                </div>
+                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Mobile Live Job Tracker">
+                                    <img src="../assets/smartprint/smartprint_mobile_tracking.png"
+                                        alt="SmartPrint Mobile Realtime Job Tracking Screen"
+                                        width="824" height="1760" loading="lazy">
+                                </div>
+                                <div class="gallery-card-caption">
+                                    <strong>Live Order Verification:</strong> Displays order reference `#SP-XXUH77`, station pickup instructions, and real-time state progression: <em>1 Paid &rarr; 2 Queued &rarr; 3 Printing &rarr; 4 Ready</em>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2: Desktop Print Studio -->
+                    <div class="gallery-panel" id="tab-desktop-studio" role="tabpanel">
+                        <div class="gallery-grid-dual">
+                            <div class="gallery-card">
+                                <div class="gallery-card-header">
+                                    <span class="gallery-card-title">Configured Print Job with Server Quote</span>
+                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
+                                </div>
+                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Desktop Configured Print Job Screen">
+                                    <img src="../assets/smartprint/smartprint_job_configured.png"
+                                        alt="SmartPrint Desktop Configured Print Job View"
+                                        width="1280" height="900" loading="lazy">
+                                </div>
+                                <div class="gallery-card-caption">
+                                    <strong>Full Studio Interface:</strong> Real-time price breakdown (₹5.00 total), duplex savings calculation, paper GSM weight selector, binding options, and walk-in cash or online dispatch buttons.
+                                </div>
+                            </div>
+
+                            <div class="gallery-card">
+                                <div class="gallery-card-header">
+                                    <span class="gallery-card-title">Initial Document Dropzone &amp; Station Chooser</span>
+                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
+                                </div>
+                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Customer Dropzone and Station Selector">
+                                    <img src="../assets/smartprint/smartprint_customer_portal.png"
+                                        alt="SmartPrint Customer Initial Upload Interface"
+                                        width="1280" height="900" loading="lazy">
+                                </div>
+                                <div class="gallery-card-caption">
+                                    <strong>Clean Landing State:</strong> Drag-and-drop 256-bit SSL encrypted PDF upload zone, station operating hours, and live station pricing summary (B&amp;W: ₹2.00, Color: ₹10.00).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3: Shop Owner Console -->
+                    <div class="gallery-panel" id="tab-shop-dashboard" role="tabpanel">
+                        <div class="gallery-card">
+                            <div class="gallery-card-header">
+                                <span class="gallery-card-title">Authenticated Shop Owner Counter Console (AUCE Campus Centre)</span>
+                                <span class="gallery-zoom-prompt">🔍 Click to zoom full-resolution</span>
+                            </div>
+                            <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Authenticated Shop Owner Dashboard">
+                                <img src="../assets/smartprint/smartprint_shop_dashboard.png"
+                                    alt="SmartPrint Shop Owner Console with Live Spool Queue and Metrics"
+                                    width="1366" height="920" loading="lazy">
+                            </div>
+                            <div class="gallery-card-caption">
+                                <strong>Live Counter Operations:</strong> Active revenue tracking (₹134.00 today), total pages printed (14), active spool queue (1), 1 connected Windows agent PC, and the live orders table with print, issue, and collection actions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 4: Pricing & Hardware Management -->
+                    <div class="gallery-panel" id="tab-hardware-pricing" role="tabpanel">
+                        <div class="gallery-grid-dual">
+                            <div class="gallery-card">
+                                <div class="gallery-card-header">
+                                    <span class="gallery-card-title">Granular Pricing &amp; Services Matrix</span>
+                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
+                                </div>
+                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Shop Pricing Matrix Configuration">
+                                    <img src="../assets/smartprint/smartprint_pricing_matrix.png"
+                                        alt="SmartPrint Pricing and Services Matrix Interface"
+                                        width="1366" height="920" loading="lazy">
+                                </div>
+                                <div class="gallery-card-caption">
+                                    <strong>Operator Rate Control:</strong> Per-page rates (B&amp;W ₹2, Color ₹10), duplex sheet discounts, paper grades (Standard 75 GSM, Executive Bond, Cardstock), binding add-ons (Staple, Spiral, Hard Cover), and operating hours.
+                                </div>
+                            </div>
+
+                            <div class="gallery-card">
+                                <div class="gallery-card-header">
+                                    <span class="gallery-card-title">Discovered Counter PCs &amp; Hardware</span>
+                                    <span class="gallery-zoom-prompt">🔍 Click to zoom</span>
+                                </div>
+                                <div class="gallery-card-body zoomable-ui" data-title="SmartPrint Discovered Hardware and Printers">
+                                    <img src="../assets/smartprint/smartprint_hardware_printers.png"
+                                        alt="SmartPrint Counter PCs and Connected Printer Drivers"
+                                        width="1366" height="920" loading="lazy">
+                                </div>
+                                <div class="gallery-card-caption">
+                                    <strong>Native Hardware Discovery:</strong> Displays connected Counter PC (`Front Counter PC`, status READY) and paired Windows drivers (`Virtual_Test_Printer`, etc.) with reported driver capabilities.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             SYSTEM ARCHITECTURE & TECHNICAL SPECIFICATION
+             ================================================================== -->
+        <section class="section wrap" id="architecture">
+            <span class="section-kicker">05 // TECHNICAL BLUEPRINT</span>
+            <h2>Distributed Multi-Tier <em>Architecture.</em></h2>
+            <p class="section-lead">
+                Engineered with strict separation of concerns, zero client trust, and resilient local queuing designed to withstand campus network fluctuations.
+            </p>
+
+            <div class="arch-diagram-card">
+                <div class="arch-tiers-grid">
+                    <!-- Tier 1 -->
+                    <div class="arch-tier-box">
+                        <span class="tier-kicker">TIER 01</span>
+                        <h4 class="tier-name">Customer PWA</h4>
+                        <ul class="tier-list">
+                            <li>React 18 + Vite</li>
+                            <li>WebAssembly PDF.js</li>
+                            <li>Client Range Parsing</li>
+                            <li>Local Idempotency Key</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="arch-tier-box">
+                        <span class="tier-kicker">TIER 02</span>
+                        <h4 class="tier-name">Supabase Cloud</h4>
+                        <ul class="tier-list">
+                            <li>PostgreSQL 17 RLS</li>
+                            <li>Private Storage Buckets</li>
+                            <li>Expiring Signed URLs</li>
+                            <li>Edge Functions API</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="arch-tier-box">
+                        <span class="tier-kicker">TIER 03</span>
+                        <h4 class="tier-name">Payment Gateway</h4>
+                        <ul class="tier-list">
+                            <li>Cashfree PG Orders</li>
+                            <li>UPI QR Generation</li>
+                            <li>HMAC Signature Webhook</li>
+                            <li>Deduplication Engine</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tier 4 -->
+                    <div class="arch-tier-box">
+                        <span class="tier-kicker">TIER 04</span>
+                        <h4 class="tier-name">Local Print Agent</h4>
+                        <ul class="tier-list">
+                            <li>Python 3.11+ Daemon</li>
+                            <li>Atomic State Journal</li>
+                            <li>Streaming SHA-256 Check</li>
+                            <li>Outbound TLS Only</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tier 5 -->
+                    <div class="arch-tier-box">
+                        <span class="tier-kicker">TIER 05</span>
+                        <h4 class="tier-name">Printer Engine</h4>
+                        <ul class="tier-list">
+                            <li>`winspool.drv` / CUPS</li>
+                            <li>Private USB / Local LAN</li>
+                            <li>Never Internet-Exposed</li>
+                            <li>Hardware Paper/Toner Probe</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="arch-pillars-grid">
+                    <div class="pillar-item">
+                        <h5 class="pillar-title">01 / Zero Client Trust</h5>
+                        <p class="pillar-desc">
+                            All page calculations, pricing proofs, and authorization are verified strictly by the server. The client cannot forge payment status.
+                        </p>
+                    </div>
+
+                    <div class="pillar-item">
+                        <h5 class="pillar-title">02 / Atomic Job Leasing</h5>
+                        <p class="pillar-desc">
+                            Jobs are claimed by print agents via atomic `FOR UPDATE SKIP LOCKED` database transactions, preventing duplicate dispatches.
+                        </p>
+                    </div>
+
+                    <div class="pillar-item">
+                        <h5 class="pillar-title">03 / Durable Local Journal</h5>
+                        <p class="pillar-desc">
+                            All spool transitions are synced to local disk with `os.fsync`. Interrupted jobs recover to `needs_review` without blind re-prints.
+                        </p>
+                    </div>
+
+                    <div class="pillar-item">
+                        <h5 class="pillar-title">04 / Credential Isolation</h5>
+                        <p class="pillar-desc">
+                            Agents authenticate with short-lived scoped device bearer tokens. Zero database root credentials or payment secrets ever reach the kiosk.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hardware Candidate Panel -->
+            <div class="hardware-candidate-panel">
+                <div>
+                    <span class="section-kicker" style="margin-bottom: 8px;">HARDWARE BENCHMARK</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: #ffffff;">Target Printer Evaluation</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: var(--ink-secondary);">
+                        As part of our hardware evaluation documented in <code style="color: var(--aqua); background: rgba(0, 229, 212, 0.1); padding: 2px 6px; border-radius: 4px;">PRINTER_SHORTLIST.md</code>, we evaluated commercial desktop workhorse laser engines for pilot kiosk enclosures.
+                    </p>
+                </div>
+                <div class="hardware-specs-list">
+                    <div class="hw-spec-card">
+                        <div class="hw-spec-name">Brother HL-L3280CDW</div>
+                        <div class="hw-spec-role">Candidate A &bull; Color LED Laser</div>
+                        <div class="hw-spec-notes">
+                            26 ppm output, automatic duplex, standard PCL/BR-Script driver, compact footprint, and ultra-low standby power consumption for kiosk deployment.
+                        </div>
+                    </div>
+
+                    <div class="hw-spec-card">
+                        <div class="hw-spec-name">Canon LBP647cdw</div>
+                        <div class="hw-spec-role">Candidate B &bull; High-Volume Laser</div>
+                        <div class="hw-spec-notes">
+                            Heavy monthly duty cycle (30,000 pages), robust paper pickup mechanics for high-humidity paper stocks, and high-yield toner cartridges.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             DEVELOPMENT PROGRESS & ROADMAP
+             ================================================================== -->
+        <section class="section wrap" id="status">
+            <span class="section-kicker">06 // STATUS &amp; ROADMAP</span>
+            <h2>Engineering Milestones &amp; <em>Pilot Roadmap.</em></h2>
+            <p class="section-lead">
+                SmartPrint follows a phased engineering roadmap. Below is an unvarnished audit of completed milestones, current sprint deliverables, and scheduled campus pilot readiness.
+            </p>
+
+            <div class="roadmap-timeline">
+                <div class="timeline-phase-row complete">
+                    <div class="phase-number">PHASE 0 &amp; 1</div>
+                    <div class="phase-title">PWA &amp; Validation</div>
+                    <div class="phase-summary">
+                        Customer web interface, WebAssembly PDF parsing, page range syntax parser (`1-5, 8, 11-14`), and PostgreSQL declarative database schema with RLS.
+                    </div>
+                    <div class="phase-badge-col">
+                        <span class="status-pill green">✓ Completed</span>
+                    </div>
+                </div>
+
+                <div class="timeline-phase-row complete">
+                    <div class="phase-number">PHASE 2</div>
+                    <div class="phase-title">Local Print Agent</div>
+                    <div class="phase-summary">
+                        Python 3.11 print agent, native Windows `winspool.drv` ctypes driver adapter, durable disk journal (`os.fsync`), and 62 automated unit tests passed.
+                    </div>
+                    <div class="phase-badge-col">
+                        <span class="status-pill green">✓ Completed</span>
+                    </div>
+                </div>
+
+                <div class="timeline-phase-row complete">
+                    <div class="phase-number">PHASE 3</div>
+                    <div class="phase-title">Pairing &amp; Cloud Sync</div>
+                    <div class="phase-summary">
+                        Secure shop pairing code exchange, SHA-256 hashed device tokens, atomic job leasing (`FOR UPDATE SKIP LOCKED`), Supabase Edge Functions, and 81 tests passed.
+                    </div>
+                    <div class="phase-badge-col">
+                        <span class="status-pill green">✓ Completed</span>
+                    </div>
+                </div>
+
+                <div class="timeline-phase-row active">
+                    <div class="phase-number">PHASE 4</div>
+                    <div class="phase-title">Payment &amp; Spooler Loop</div>
+                    <div class="phase-summary">
+                        Cashfree Payment Gateway integration, cryptographic webhook reconciliation, real-time counter spool loop, and simulated hardware exception recovery.
+                    </div>
+                    <div class="phase-badge-col">
+                        <span class="status-pill amber">⚡ In Active R&amp;D</span>
+                    </div>
+                </div>
+
+                <div class="timeline-phase-row pending">
+                    <div class="phase-number">PHASE 5</div>
+                    <div class="phase-title">Hardware Soak Testing</div>
+                    <div class="phase-summary">
+                        Physical Brother / Canon laser printer integration, SNMP paper/toner telemetry, 500-page mixed soak testing, and paper jam crash recovery validation.
+                    </div>
+                    <div class="phase-badge-col">
+                        <span class="status-pill">⏳ Scheduled</span>
+                    </div>
+                </div>
+
+                <div class="timeline-phase-row pending">
+                    <div class="phase-number">PHASE 6 &amp; 7</div>
+                    <div class="phase-title">Campus Pilot Launch</div>
+                    <div class="phase-summary">
+                        Fleet operations console, mini-PC OS hardening, security penetration testing, and live pilot deployment at AUCE / Vignan's Women's College.
+                    </div>
+                    <div class="phase-badge-col">
+                        <span class="status-pill">⏳ Pilot Prep</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             PILOT ENQUIRY & CALL TO ACTION
+             ================================================================== -->
+        <section class="section wrap" id="contact" style="border-bottom: none;">
+            <div class="cta-box">
+                <span class="section-kicker" style="margin-bottom: 12px;">COLLABORATE WITH ADHITRA</span>
+                <h2>Interested in a Campus <em>Pilot Deployment?</em></h2>
+                <p class="cta-lead">
+                    We are actively preparing pilot trials for higher-education campuses, university libraries, coaching institutions, and Xerox business partners. Connect with our engineering team to discuss site compatibility.
+                </p>
+
+                <div class="cta-actions-row">
+                    <a class="btn-primary" href="mailto:adhitra.dev@gmail.com?subject=SmartPrint%20Pilot%20Partnership%20Enquiry">
+                        Initiate Pilot Dialogue ↗
+                    </a>
+                    <a class="btn-secondary" href="https://github.com/Adhitra/SmartPrint-by-Adhitra" target="_blank" rel="noopener noreferrer">
+                        Inspect GitHub Repository ↗
+                    </a>
+                </div>
+
+                <div class="cta-contact-details">
+                    <div class="cta-contact-item">
+                        <span>Direct Communication: </span>
+                        <strong>adhitra.dev@gmail.com</strong>
+                    </div>
+                    <div class="cta-contact-item">
+                        <span>Parent Venture: </span>
+                        <strong>Adhitra Technologies</strong>
+                    </div>
+                    <div class="cta-contact-item">
+                        <span>Primary Pilot Site: </span>
+                        <strong>Visakhapatnam, Andhra Pradesh</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================================================================
+         LIGHTBOX MODAL FOR REAL APPLICATION SCREENSHOTS
+         ================================================================== -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Screenshot Preview">
+        <div class="lightbox-content">
+            <div class="lightbox-img-wrapper">
+                <img src="../assets/smartprint/smartprint_job_configured.png" alt="Full Preview" id="lightbox-img">
+            </div>
+            <div class="lightbox-footer">
+                <span class="lightbox-title" id="lightbox-title">SmartPrint Interface Preview</span>
+                <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close screenshot preview">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================================================================
+         FOOTER
+         ================================================================== -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a class="brand-combo" href="../" aria-label="Return to Adhitra Corporate Homepage">
+                        <img src="../assets/brand/logo_symbol.svg" alt="Adhitra Symbol" class="logo-symbol" width="30" height="30">
+                        <div class="logo-typography">
+                            <span class="logo-text-product">Smart<span>Print</span></span>
+                            <span class="logo-sub-tag">by ADHITRA</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc">
+                        A technology initiative by Adhitra engineering autonomous, connected, and privacy-first document experiences for high-footfall institutions.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="footer-col-title">Product Sections</h5>
+                    <ul class="footer-links">
+                        <li><a href="#overview">Overview &amp; Problem</a></li>
+                        <li><a href="#workflow">System Workflow</a></li>
+                        <li><a href="#features">Capabilities</a></li>
+                        <li><a href="#interface">Live Application UI</a></li>
+                        <li><a href="#architecture">Architecture &amp; Security</a></li>
+                        <li><a href="#status">Roadmap &amp; Milestones</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="footer-col-title">Adhitra Ecosystem</h5>
+                    <ul class="footer-links">
+                        <li><a href="../#home">Adhitra Corporate Home ↗</a></li>
+                        <li><a href="../#focus">Focus Areas &amp; Capabilities ↗</a></li>
+                        <li><a href="../#products">Products &amp; Initiatives ↗</a></li>
+                        <li><a href="https://github.com/Adhitra/SmartPrint-by-Adhitra" target="_blank" rel="noopener noreferrer">SmartPrint GitHub Repo ↗</a></li>
+                        <li><a href="mailto:adhitra.dev@gmail.com">Contact Engineering ↗</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Adhitra Technologies. All rights reserved.</p>
+                <p class="footer-disclaimer">
+                    <strong>Development Transparency Notice:</strong> SmartPrint is currently in engineering development and pre-pilot testing. Features, interfaces, and architecture described reflect verified codebase status and active milestones. No commercial availability is implied.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Client Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
